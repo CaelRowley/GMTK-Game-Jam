@@ -587,9 +587,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: d0d52c34-50cd-4ac7-a835-184f523d00fc
-  projectName: GMTK-Game-Jam
-  organizationId: caelrowley
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
