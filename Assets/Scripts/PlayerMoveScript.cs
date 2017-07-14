@@ -10,6 +10,8 @@ public class PlayerMoveScript : MonoBehaviour {
         //System.Console.WriteLine("Hello");
         //Debug.Log("JPAsf");
         rb = GetComponent<Rigidbody>();
+        Vector3 movement = new Vector3(0.0f, -25.0f, 0.0f);
+        rb.AddForce(movement * 1);
     }
 	
 	// Update is called once per frame
@@ -19,16 +21,32 @@ public class PlayerMoveScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
+        //var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
-        //if (Input.GetButtonDown("Fire1")) {
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * 1);
-        //}
-            
+        //transform.Rotate(0, 0, 0);
+        //transform.Translate(0, 0, z);
+
+        if (Input.GetButtonDown("Fire1")) {
+            Vector3 rotation = new Vector3(0.0f, 0.0f, 50.0f);
+            transform.Rotate(rotation * Time.deltaTime);
+            transform.Translate(0.1f, 0.0f, 0);
+
+            //Vector3 movement = new Vector3(0.0f, -3.0f, 0.0f);
+            //rb.AddForce(movement * 1);
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Vector3 rotation = new Vector3(0.0f, 0.0f, -50.0f);
+            transform.Rotate(rotation * Time.deltaTime);
+            transform.Translate(-0.1f, 0, 0.0f);
+            //Vector3 movement = new Vector3(0.0f, -3.0f, 0.0f);
+            //rb.AddForce(movement * 1);
+        }
 
 
-        
+
+
     }
 }
