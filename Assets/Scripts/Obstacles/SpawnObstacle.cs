@@ -39,7 +39,7 @@ public class SpawnObstacle : MonoBehaviour {
         if(useRandomRotation) {
             randomRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
         } else {
-            randomRotation = playerObject.transform.rotation;
+            randomRotation = transform.rotation;
         }
 
         spawnTimer = Random.Range(spawnTimeMin, spawnTimeMax) / 10;

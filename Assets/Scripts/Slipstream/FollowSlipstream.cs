@@ -46,6 +46,9 @@ public class FollowSlipstream : MonoBehaviour {
 
 
     protected void Update() {
+        if(transform.position.z > 0) {
+            transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
+        }
         if(useRigidbody)
             rigidmember.velocity = currentHeading * speed;
         else
