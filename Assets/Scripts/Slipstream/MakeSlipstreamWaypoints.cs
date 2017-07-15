@@ -5,7 +5,6 @@ using UnityEngine;
 public class MakeSlipstreamWaypoints : MonoBehaviour {
     public float spawnTime;
     private float spawnTimer;
-    private List<Transform> waypointList = new List<Transform>();
     public Transform waypointObject;
     public GameObject playerObject;
 
