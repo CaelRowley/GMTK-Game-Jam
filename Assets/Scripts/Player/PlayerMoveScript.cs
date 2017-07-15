@@ -11,8 +11,8 @@ public class PlayerMoveScript : MonoBehaviour {
         
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
+        keepPlayerInBounds();
         playerCanNeverMoveBackwards();
         playerMoveFoward();
         handleTiltInput();
@@ -40,6 +40,19 @@ public class PlayerMoveScript : MonoBehaviour {
         {
             Quaternion rotationBack = Quaternion.Euler(new Vector3(0.0f, 0.0f, 270.0f));
             transform.rotation = rotationBack;
+        }
+    }
+    void keepPlayerInBounds() {
+        if (transform.position.x < -15.0f)
+        {
+            Quaternion rotationBackTo0Left = Quaternion.Euler(new Vector3(0.0f, 0.0f, 10.0f));
+            transform.rotation = rotationBackTo0Left;
+
+        }
+        else if (transform.position.x > 15.0f)
+        {
+            Quaternion rotationBackTo0Right = Quaternion.Euler(new Vector3(0.0f, 0.0f, 350.0f));
+            transform.rotation = rotationBackTo0Right;
         }
     }
 }
