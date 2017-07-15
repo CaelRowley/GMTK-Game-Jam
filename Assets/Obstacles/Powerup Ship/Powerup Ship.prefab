@@ -119,10 +119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  waypointRadius: 1.5
-  damping: 1.5
+  waypointRadius: 1
+  damping: 100
   loop: 0
-  speed: 5
+  slowSpeed: 5
+  fastSpeed: 10
   faceHeading: 0
   followWaypoints: 0
 --- !u!114 &114995953813640520

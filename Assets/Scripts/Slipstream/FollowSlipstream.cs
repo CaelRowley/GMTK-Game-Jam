@@ -8,7 +8,9 @@ public class FollowSlipstream : MonoBehaviour {
     public float waypointRadius = 1.5f;
     public float damping = 0.1f;
     public bool loop = false;
-    public float speed = 2.0f;
+    public float slowSpeed = 2.0f;
+    public float fastSpeed;
+    private float speed;
     public bool faceHeading = true;
 
     private Vector3 currentHeading, targetHeading;
@@ -40,6 +42,7 @@ public class FollowSlipstream : MonoBehaviour {
         } else {
             followWaypoints = false;
             targetHeading = defaultHeading;
+             speed = slowSpeed;
         }
         currentHeading = Vector3.Lerp(currentHeading, targetHeading, damping * Time.deltaTime);
     }
@@ -86,5 +89,6 @@ public class FollowSlipstream : MonoBehaviour {
     public void AddWaypoint(Transform newWaypoint) {
         waypoints.Add(newWaypoint);
         followWaypoints = true;
+        speed = fastSpeed;
     }
 }
