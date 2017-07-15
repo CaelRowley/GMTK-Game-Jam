@@ -12,8 +12,8 @@ public class PlayerMoveScript : MonoBehaviour {
         //System.Console.WriteLine("Hello");
         //Debug.Log("JPAsf");
         rb = GetComponent<Rigidbody>();
-        //Vector3 movement = new Vector3(0.0f, -15.0f, 0.0f);
-        //rb.AddForce(movement * 1);
+        Vector3 movement = new Vector3(0.0f, -20.0f, 0.0f);
+        rb.AddForce(movement * 1);
     }
 	
 	// Update is called once per frame
@@ -32,7 +32,7 @@ public class PlayerMoveScript : MonoBehaviour {
         //transform.Translate(0, 0, z);
         //xTiltPhoneValue = Input.acceleration.x;
         var calculatedAngle = transform.eulerAngles.z;
-        if (calculatedAngle > 90.0f)
+        if (calculatedAngle >= 90.0f)
         {
             //print("Greater than 90");
             var movement = 360.0f - calculatedAngle;
