@@ -34,7 +34,7 @@ public class PlayerMoveScript : MonoBehaviour {
         //transform.Rotate(0, 0, 0);
         //transform.Translate(0, 0, z);
         //xTiltPhoneValue = Input.acceleration.x;
-        float calculatedAngle = transform.eulerAngles.z;
+        //float calculatedAngle = transform.eulerAngles.z;
         //float numberOfRotations = calculatedAngle / 360.0f;
         //print(numberOfRotations);
         //if (numberOfRotations > 0.1f)
