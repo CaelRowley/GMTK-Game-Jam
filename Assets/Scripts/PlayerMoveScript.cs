@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMoveScript : MonoBehaviour {
-    private Rigidbody rb;
-    private float startAcceleration;
-    public float speed = 30.0F;
+    //private Rigidbody rb;
+    //private float startAcceleration;
+    public float speed = 5.0F;
     public Transform target;
-    private bool isAbleToTurn;
+    //private bool isAbleToTurn;
     //public float speed;
     // Use this for initialization
     void Start () {
         //Console.WriteLine("Hello Unity");
         //System.Console.WriteLine("Hello");
         //Debug.Log("JPAsf");
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         //Vector3 movement = new Vector3(0.0f, -20.0f, 0.0f);
         //rb.AddForce(movement * 1);
         
@@ -27,7 +27,7 @@ public class PlayerMoveScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        isAbleToTurn = false;
+        //isAbleToTurn = false;
         //var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         //var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
@@ -35,7 +35,7 @@ public class PlayerMoveScript : MonoBehaviour {
         //transform.Translate(0, 0, z);
         //xTiltPhoneValue = Input.acceleration.x;
         float calculatedAngle = transform.eulerAngles.z;
-        float numberOfRotations = calculatedAngle / 360.0f;
+        //float numberOfRotations = calculatedAngle / 360.0f;
         //print(numberOfRotations);
         //if (numberOfRotations > 0.1f)
         //{
@@ -90,8 +90,8 @@ public class PlayerMoveScript : MonoBehaviour {
         //transform.Rotate(dir * speed);
         //if (isAbleToTurn) {
             //print("Not able to turn");
-            Vector3 rotation = new Vector3(0.0f, 0.0f, (Input.acceleration.x * 270.0f));
-            transform.Rotate(rotation * Time.deltaTime);    
+        Vector3 rotation = new Vector3(0.0f, 0.0f, (Input.acceleration.x * 270.0f));
+        transform.Rotate(rotation * Time.deltaTime);    
             //Vector3 playerMovementDirection = new Vector3(0.0f, -3.0f, 0.0f);
             //transform.Translate(playerMovementDirection * speed);
         //}
