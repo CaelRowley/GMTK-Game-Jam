@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ScrollController : MonoBehaviour{
-    public float scrollSpeed;
-    public float tileSizeZ;
-    public Transform player;
+    private GameObject player;
     private bool usedOnce;
     public GameObject nextBackground;
 
@@ -16,6 +14,7 @@ public class ScrollController : MonoBehaviour{
     {
         startPosition = transform.position;
         startRotation = transform.rotation;
+        player = GameObject.FindGameObjectWithTag("Player");
         usedOnce = true;
     }
 
@@ -24,14 +23,15 @@ public class ScrollController : MonoBehaviour{
 
         if (usedOnce)
         {
-            if (startPosition.y > player.position.y)
+            print(player.transform.position.y);
+            if (startPosition.y > player.transform.position.y)
             {
                 Instantiate(nextBackground, new Vector3(startPosition.x, startPosition.y - 40.0f, startPosition.z), startRotation);
                 usedOnce = false;
             }
         }
         else {
-            if (startPosition.y - player.position.y > 30.0f) {
+            if (startPosition.y - player.transform.position.y > 30.0f) {
                 Destroy(gameObject);
             }
         }
