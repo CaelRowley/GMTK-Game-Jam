@@ -32,7 +32,6 @@ public class PlayerMoveScript : MonoBehaviour {
         if (transform.eulerAngles.z > 90.0f & transform.eulerAngles.z < 180.0f)
         {
             Quaternion rotationBack90 = Quaternion.Euler(new Vector3(0.0f, 0.0f, 90.0f));
-            print(rotationBack90);
             transform.rotation = rotationBack90;
 
         }
