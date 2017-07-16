@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114021473823003634}
   - component: {fileID: 114696674081708738}
   - component: {fileID: 114672524155488778}
+  - component: {fileID: 114449418568179962}
   - component: {fileID: 114359044062455768}
   - component: {fileID: 50693469495629716}
   - component: {fileID: 61219614627773348}
@@ -445,6 +446,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   explosion: {fileID: 1309547563907556, guid: 645faca15ba63a343b8d5e7a81be36bc, type: 2}
+--- !u!114 &114449418568179962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422984690076150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b7c6fe0db01ae4d9a38ac3f99215e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachedObject: {fileID: 1422984690076150}
+  spawnPosX: 0
+  spawnPosY: -0.3
+  spawnAsChild: 1
 --- !u!114 &114672524155488778
 MonoBehaviour:
   m_ObjectHideFlags: 1

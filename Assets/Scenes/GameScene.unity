@@ -3614,12 +3614,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimeMin: 50
-  spawnTimeMax: 100
+  spawnTimeMin: 20
+  spawnTimeMax: 20
   spawnPosXMin: -5
   spawnPosXMax: 15
   numToSpawnMin: 1
-  numToSpawnMax: 3
+  numToSpawnMax: 1
   obstacle: {fileID: 1337889734824698, guid: 29b5f19f198a9bc41b51ceaa05c204e4, type: 2}
   playerObject: {fileID: 143985944}
   minScale: 3
@@ -3653,9 +3653,9 @@ MonoBehaviour:
   spawnTimeMax: 20
   spawnPosXMin: -5
   spawnPosXMax: 15
-  numToSpawnMin: 1
-  numToSpawnMax: 3
-  obstacle: {fileID: 1479787396358560, guid: 8fa104fc0167481478896e8f91a8175a, type: 2}
+  numToSpawnMin: 5
+  numToSpawnMax: 5
+  obstacle: {fileID: 1856835554962374, guid: 8fa104fc0167481478896e8f91a8175a, type: 2}
   playerObject: {fileID: 143985944}
   minScale: 1
   maxScale: 10
