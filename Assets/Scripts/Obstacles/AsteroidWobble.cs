@@ -8,7 +8,7 @@ public class AsteroidWobble : MonoBehaviour {
     private Vector3 targetPosition;
 
     private void Awake() {
-        speed = Random.Range(0.0f, 3.0f);
+        speed = Random.Range(0.0f, 10.0f);
         targetPosition = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + Random.Range(-10, 10), transform.position.z);
     }
     private void Update() {
