@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMoveScript : MonoBehaviour {
-    public float speed = 5.0F;
+    public float speed;
     public Transform target;
     public float boundsLimit;
 

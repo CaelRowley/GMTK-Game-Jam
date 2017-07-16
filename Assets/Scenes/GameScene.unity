@@ -208,11 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimeMin: 40
-  spawnTimeMax: 50
+  spawnTimeMin: 15
+  spawnTimeMax: 20
   spawnPosXMin: -18
   spawnPosXMax: 18
-  numToSpawnMin: 1
+  numToSpawnMin: 3
   numToSpawnMax: 5
   obstacle: {fileID: 1856835554962374, guid: 8fa104fc0167481478896e8f91a8175a, type: 2}
   playerObject: {fileID: 143985944}
@@ -3697,11 +3697,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTimeMin: 50
-  spawnTimeMax: 150
+  spawnTimeMax: 60
   spawnPosXMin: -15
   spawnPosXMax: 15
   numToSpawnMin: 1
-  numToSpawnMax: 3
+  numToSpawnMax: 2
   obstacle: {fileID: 1337889734824698, guid: 29b5f19f198a9bc41b51ceaa05c204e4, type: 2}
   playerObject: {fileID: 143985944}
   minScale: 20
@@ -11360,6 +11360,11 @@ Prefab:
         type: 2}
       propertyPath: health
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114162102528970280, guid: d2e0c221434166245acd5538c81a1435,
+        type: 2}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2e0c221434166245acd5538c81a1435, type: 2}

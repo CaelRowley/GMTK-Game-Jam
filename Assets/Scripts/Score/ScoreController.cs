@@ -59,21 +59,21 @@ public class ScoreController : MonoBehaviour {
 
         if (adjustedScore >= 500 && adjustedScore < 750)
         {
-            astroidSpawnerScript.numToSpawnMax = 10;
-            powerUpSpawnerScript.numToSpawnMax = 8;
-            playerMove.speed = 8.0f;
+            astroidSpawnerScript.numToSpawnMax = 8;
+            powerUpSpawnerScript.numToSpawnMax = 3;
+            playerMove.speed = 11.0f;
         }
         else if (adjustedScore >= 750 && adjustedScore < 1000)
         {
             astroidSpawnerScript.numToSpawnMin = 4;
-            powerUpSpawnerScript.numToSpawnMin = 4;
-            playerMove.speed = 9.0f;
+            powerUpSpawnerScript.numToSpawnMin = 2;
+            playerMove.speed = 12.0f;
         }
         else if (adjustedScore >= 1000 && adjustedScore < 1500)
         {
             astroidSpawnerScript.numToSpawnMax = 10;
-            powerUpSpawnerScript.numToSpawnMax = 9;
-            playerMove.speed = 10.0f;
+            powerUpSpawnerScript.numToSpawnMax = 5;
+            playerMove.speed = 13.5f;
         }
         else if (adjustedScore >= 1500 && adjustedScore < 3000)
         {
@@ -81,15 +81,15 @@ public class ScoreController : MonoBehaviour {
             powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
             powerUpSpawnerScript.numToSpawnMin = 5;
-            playerMove.speed = 11.0f;
+            playerMove.speed = 14.0f;
         }
         else if (adjustedScore >= 3000)
         {
-            astroidSpawnerScript.spawnTimeMax = 3;
-            powerUpSpawnerScript.spawnTimeMax = 3;
-            astroidSpawnerScript.spawnTimeMax = 3;
-            powerUpSpawnerScript.spawnTimeMax = 3;
-            playerMove.speed = 12.0f;
+            astroidSpawnerScript.spawnTimeMin = 10;
+            powerUpSpawnerScript.spawnTimeMin = 20;
+            astroidSpawnerScript.spawnTimeMax = 15;
+            powerUpSpawnerScript.spawnTimeMax = 25;
+            playerMove.speed = 14.5f;
         }
     }
 
