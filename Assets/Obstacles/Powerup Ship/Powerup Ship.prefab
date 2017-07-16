@@ -23,11 +23,11 @@ GameObject:
   - component: {fileID: 212446463212417302}
   - component: {fileID: 114804797812156410}
   - component: {fileID: 114995953813640520}
+  - component: {fileID: 114343014516527594}
   - component: {fileID: 50894754418218186}
   - component: {fileID: 61331835392139568}
   - component: {fileID: 114286600000160824}
   - component: {fileID: 114064063012149884}
-  - component: {fileID: 114721817961598152}
   m_Layer: 0
   m_Name: Powerup Ship
   m_TagString: Obstacle
@@ -125,6 +125,7 @@ MonoBehaviour:
   explosion: {fileID: 1309547563907556, guid: 645faca15ba63a343b8d5e7a81be36bc, type: 2}
   invincible: 1
   player: {fileID: 0}
+  score: {fileID: 0}
   invincibilityOffset: -15
 --- !u!114 &114286600000160824
 MonoBehaviour:
@@ -142,7 +143,7 @@ MonoBehaviour:
   spawnPosX: -0.02
   spawnPosY: -0.07
   spawnAsChild: 1
---- !u!114 &114721817961598152
+--- !u!114 &114343014516527594
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1337889734824698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4414130db1c2c334ea7d3dc3587cb906, type: 3}
+  m_Script: {fileID: 11500000, guid: 70559ceb51a078341929b998479f7883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDamage: 1

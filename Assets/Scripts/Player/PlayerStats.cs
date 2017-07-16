@@ -11,11 +11,16 @@ public class PlayerStats : MonoBehaviour {
     private void Update() {
         if(health <= 0) {
             GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
-            Destroy(gameObject);
+            StartCoroutine("LoadLeaderboard");
         } 
     }
 
     private void OnDestroy() {
         SceneManager.LoadScene("Leaderboard");
+    }
+
+    IEnumerator LoadLeaderboard() {
+        yield return new WaitForSeconds(2.0f);
+        Destroy(gameObject);
     }
 }
