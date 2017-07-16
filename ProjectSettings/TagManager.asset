@@ -9,6 +9,9 @@ TagManager:
   - Lives
   - Follower
   - Multiplier
+  - Difficulty
+  - AstroidCreator
+  - PowerUpShipCreator
   layers:
   - Default
   - TransparentFX

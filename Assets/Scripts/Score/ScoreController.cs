@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour {
     private GameObject player;
     private GameObject multiplier;
+    private GameObject astroidSpawner;
+    private GameObject powerUpShipSpawner;
     private GameObject[] lives;
     private GameObject[] followers;
     public int highestNumOfFollowers = 0;
-    private static float score = 1.0f;
+    private float score = 1.0f;
     private float scoreMultiplier = 0.0f;
     private float adjustedScore;
 
@@ -34,6 +36,8 @@ public class ScoreController : MonoBehaviour {
         lives = GameObject.FindGameObjectsWithTag("Lives");
         player = GameObject.FindGameObjectWithTag("Player");
         multiplier = GameObject.FindGameObjectWithTag("Multiplier");
+        astroidSpawner = GameObject.FindGameObjectWithTag("AstroidCreator");
+        powerUpShipSpawner = GameObject.FindGameObjectWithTag("PowerUpShipCreator");
     }
 
 	// Update is called once per frame
@@ -45,11 +49,48 @@ public class ScoreController : MonoBehaviour {
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         removeLives(playerStats);
 
+        SpawnObstacle astroidSpawnerScript = astroidSpawner.GetComponent<SpawnObstacle>();
+        SpawnObstacle powerUpSpawnerScript = powerUpShipSpawner.GetComponent<SpawnObstacle>();
+
+        increaseDifficulty();
     }
+
+    void increaseDifficulty() {
+        if (adjustedScore >= 500 && adjustedScore < 750)
+        {
+            astroidSpawnerScript.numToSpawnMax = 10;
+            powerUpSpawnerScript.numToSpawnMax = 4;
+        }
+        else if (adjustedScore >= 750 && adjustedScore < 1000)
+        {
+            astroidSpawnerScript.numToSpawnMin = 4;
+            powerUpSpawnerScript.numToSpawnMin = 2;
+        }
+        else if (adjustedScore >= 1000 && adjustedScore < 1500)
+        {
+            astroidSpawnerScript.numToSpawnMax = 10;
+            powerUpSpawnerScript.numToSpawnMax = 5;
+        }
+        else if (adjustedScore >= 1500 && adjustedScore < 3000)
+        {
+            astroidSpawnerScript.numToSpawnMax = 15;
+            powerUpSpawnerScript.numToSpawnMax = 8;
+            astroidSpawnerScript.numToSpawnMin = 6;
+            powerUpSpawnerScript.numToSpawnMin = 4;
+        }
+        else if (adjustedScore >= 1500)
+        {
+            astroidSpawnerScript.spawnTimeMax = 3;
+            powerUpSpawnerScript.spawnTimeMax = 3;
+        }
+    }
+
     void displayScore() {
+        score += 100;
         adjustedScore = score / 100;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
+
     void setMutliplierFromFollowers() {
         followers = GameObject.FindGameObjectsWithTag("Follower");
         scoreMultiplier = followers.Length;
