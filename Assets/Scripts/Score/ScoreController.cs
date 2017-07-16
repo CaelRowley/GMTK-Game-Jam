@@ -10,10 +10,10 @@ public class ScoreController : MonoBehaviour {
     private GameObject powerUpShipSpawner;
     private GameObject[] lives;
     private GameObject[] followers;
-    public int highestNumOfFollowers = 0;
-    private float score = 1.0f;
+    public int numOfFollowers;
+    public float score = 1.0f;
     private float scoreMultiplier = 0.0f;
-    private float adjustedScore;
+    public float adjustedScore;
 
 
     public string highScoreGameKey;
@@ -94,7 +94,6 @@ public class ScoreController : MonoBehaviour {
     }
 
     void displayScore() {
-        score += 100;
         adjustedScore = score / 100;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
@@ -102,8 +101,11 @@ public class ScoreController : MonoBehaviour {
     void setMutliplierFromFollowers() {
         followers = GameObject.FindGameObjectsWithTag("Follower");
         scoreMultiplier = followers.Length;
-        if (highestNumOfFollowers < followers.Length) {
-            highestNumOfFollowers = followers.Length;
+        if (numOfFollowers > followers.Length) {
+            numOfFollowers = followers.Length;
+            score -= 1000;
+        } else {
+            numOfFollowers = followers.Length;
         }
     }
 

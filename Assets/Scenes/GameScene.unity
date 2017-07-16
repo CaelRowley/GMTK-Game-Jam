@@ -11021,7 +11021,7 @@ GameObject:
   - component: {fileID: 949887469}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11094,7 +11094,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71a5b65ff78a9a48aa2c1b8054f1ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highestNumOfFollowers: 0
+  numOfFollowers: 0
+  score: 1
+  adjustedScore: 0
   highScoreGameKey: 
   bestScoreHigh: 0
 --- !u!1 &1019715417
@@ -11235,7 +11237,7 @@ Prefab:
     - target: {fileID: 114619615511287866, guid: d2e0c221434166245acd5538c81a1435,
         type: 2}
       propertyPath: health
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2e0c221434166245acd5538c81a1435, type: 2}
