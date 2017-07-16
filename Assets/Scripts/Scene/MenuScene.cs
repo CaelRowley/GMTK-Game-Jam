@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class MenuScene : MonoBehaviour {
 
     private CanvasGroup fadeGroup;
-    private float fadeInSpeed = 0.33f;
+    private float fadeInSpeed = 1f;
 
     private void Start() {
         fadeGroup = FindObjectOfType<CanvasGroup>();
 
         fadeGroup.alpha = 1;
+
     }
 
 
@@ -21,6 +22,7 @@ public class MenuScene : MonoBehaviour {
 
 
     public void OnStartClick() {
+        fadeGroup.alpha = 1;
         print("pressed");
         SceneManager.LoadScene("GameScene");
     }

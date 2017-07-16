@@ -9,7 +9,7 @@ public class ScoreController : MonoBehaviour {
     private GameObject[] lives;
     private GameObject[] followers;
     public int highestNumOfFollowers = 0;
-    private static float score = 1.0f;
+    private float score = 1.0f;
     private float scoreMultiplier = 0.0f;
     private float adjustedScore;
 
@@ -47,6 +47,7 @@ public class ScoreController : MonoBehaviour {
 
     }
     void displayScore() {
+        score += 100;
         adjustedScore = score / 100;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
@@ -90,7 +91,7 @@ public class ScoreController : MonoBehaviour {
     public void SaveScore() {
         for(int i = 0; i < bestScores.Length; i++) {
             highScoreKey = highScoreGameKey + (i + 1).ToString();
-            bestScore = PlayerPrefs.GetInt(highScoreKey, 0);
+            bestScore = PlayerPrefs.GetFloat(highScoreKey, 0);
 
             if(adjustedScore > bestScore) {
                 PlayerPrefs.SetFloat(highScoreKey, adjustedScore);
