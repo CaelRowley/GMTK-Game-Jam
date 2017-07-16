@@ -103,7 +103,7 @@ public class ScoreController : MonoBehaviour {
         scoreMultiplier = followers.Length;
         if (numOfFollowers > followers.Length) {
             numOfFollowers = followers.Length;
-            score -= 1000;
+            score -= 10000;
         } else {
             numOfFollowers = followers.Length;
         }

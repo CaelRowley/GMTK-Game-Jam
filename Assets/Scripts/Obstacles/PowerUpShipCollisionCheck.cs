@@ -19,7 +19,7 @@ public class PowerUpShipCollisionCheck : MonoBehaviour {
             score = GameObject.FindGameObjectWithTag("Score");
            
             ScoreController scoreControl = score.GetComponent<ScoreController>();
-            scoreControl.score-=1000;
+            scoreControl.score-=10000;
         }
         else if (collison.gameObject.tag.Equals("Obstacle"))
         {
