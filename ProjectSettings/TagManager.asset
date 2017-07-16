@@ -12,6 +12,7 @@ TagManager:
   - Difficulty
   - AstroidCreator
   - PowerUpShipCreator
+  - Powerup
   layers:
   - Default
   - TransparentFX

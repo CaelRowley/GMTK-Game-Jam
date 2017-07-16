@@ -12,8 +12,10 @@ public class ForcefieldCollision : MonoBehaviour {
 
 
     void OnTriggerEnter2D(Collider2D collider) {
+        ObstacleStats obstacleStats;
         if(collider.gameObject.tag.Equals("Obstacle")) {
-            Destroy(collider.gameObject);
+            obstacleStats = collider.gameObject.GetComponent<ObstacleStats>();
+            obstacleStats.health -= 1;
             forcefieldStats.health -= 1;
         }
     }

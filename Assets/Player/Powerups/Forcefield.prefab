@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114576389857996082}
   m_Layer: 0
   m_Name: Forcefield
-  m_TagString: Untagged
+  m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9e4377e92222042b714cdbda0ce800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
 --- !u!114 &114576389857996082
 MonoBehaviour:
   m_ObjectHideFlags: 1

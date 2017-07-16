@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LeaderboardManager : MonoBehaviour {
@@ -33,5 +34,10 @@ public class LeaderboardManager : MonoBehaviour {
         highScore3.text = "Third: " + highScores[2].ToString("0");
         highScore4.text = "Fourth: " + highScores[3].ToString("0");
         highScore5.text = "Fifth: " + highScores[4].ToString("0");
+    }
+
+
+    public void OnClickRestart() {
+        SceneManager.LoadScene("GameScene");
     }
 }

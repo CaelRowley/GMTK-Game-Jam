@@ -8,16 +8,16 @@ public class PowerupController : MonoBehaviour {
     public float spawnPosX;
     public float spawnPosY;
     public bool spawnAsChild = false;
+    private GameObject[] activatedPowerup;
 
-
-    void Start() {
-        
-    }
 
     public void activatePowerUp(GameObject powerup) {
-        Vector3 spawnPoint = new Vector3(attachedObject.transform.position.x + spawnPosX, attachedObject.transform.position.y + spawnPosY, attachedObject.transform.position.z);
-        GameObject newPickup = Instantiate(powerup, spawnPoint, attachedObject.transform.rotation);
-        if(spawnAsChild)
-            newPickup.transform.parent = attachedObject.transform;
+        activatedPowerup = GameObject.FindGameObjectsWithTag("Powerup");
+        if(activatedPowerup.Length < 1) {
+            Vector3 spawnPoint = new Vector3(attachedObject.transform.position.x + spawnPosX, attachedObject.transform.position.y + spawnPosY, attachedObject.transform.position.z);
+            GameObject newPickup = Instantiate(powerup, spawnPoint, attachedObject.transform.rotation);
+            if(spawnAsChild)
+                newPickup.transform.parent = attachedObject.transform;
+        } 
     }
 }

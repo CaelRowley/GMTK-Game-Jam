@@ -131,7 +131,7 @@ public class ScoreController : MonoBehaviour {
     public void SaveScore() {
         for(int i = 0; i < bestScores.Length; i++) {
             highScoreKey = highScoreGameKey + (i + 1).ToString();
-            bestScore = PlayerPrefs.GetInt(highScoreKey, 0);
+            bestScore = PlayerPrefs.GetFloat(highScoreKey, 0);
 
             if(adjustedScore > bestScore) {
                 PlayerPrefs.SetFloat(highScoreKey, adjustedScore);
