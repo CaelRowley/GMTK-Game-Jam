@@ -25,9 +25,11 @@ GameObject:
   - component: {fileID: 114995953813640520}
   - component: {fileID: 50894754418218186}
   - component: {fileID: 61331835392139568}
+  - component: {fileID: 114286600000160824}
+  - component: {fileID: 114064063012149884}
   m_Layer: 0
   m_Name: Powerup Ship
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +109,35 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114064063012149884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337889734824698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4032246b7d9e645830d1046e988ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  explosion: {fileID: 1309547563907556, guid: 645faca15ba63a343b8d5e7a81be36bc, type: 2}
+--- !u!114 &114286600000160824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337889734824698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf487dcf1eab5f469c0d1d0c2d361dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup: {fileID: 1995249201391412, guid: 77ac19267d13d1c4e851c5e35dbb7fdc, type: 2}
+  attachedObject: {fileID: 1337889734824698}
+  spawnPosX: -0.02
+  spawnPosY: -0.07
+  spawnAsChild: 1
 --- !u!114 &114804797812156410
 MonoBehaviour:
   m_ObjectHideFlags: 1
