@@ -9,6 +9,7 @@ TagManager:
   - Lives
   - Follower
   - Multiplier
+  - Powerup
   layers:
   - Default
   - TransparentFX
