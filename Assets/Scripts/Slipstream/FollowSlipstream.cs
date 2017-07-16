@@ -18,8 +18,7 @@ public class FollowSlipstream : MonoBehaviour {
     private Transform xform;
     private bool useRigidbody;
     private Rigidbody rigidmember;
-
-    public bool followWaypoints = false;
+    
     private Vector3 defaultHeading = Vector3.down;
 
 
@@ -37,10 +36,9 @@ public class FollowSlipstream : MonoBehaviour {
 
 
     protected void FixedUpdate() {
-        if(followWaypoints & waypoints.Count > 0) {
+        if(waypoints.Count > 0) {
             targetHeading = waypoints[targetwaypoint].position - xform.position;
         } else {
-            followWaypoints = false;
             targetHeading = defaultHeading;
              speed = slowSpeed;
         }
@@ -67,11 +65,6 @@ public class FollowSlipstream : MonoBehaviour {
     }
 
 
-    public bool CheckInSlipstream() {
-        return followWaypoints;
-    }
-
-
     public void OnDrawGizmos() {
         Gizmos.color = Color.red;
         if(waypoints == null)
@@ -88,7 +81,10 @@ public class FollowSlipstream : MonoBehaviour {
 
     public void AddWaypoint(Transform newWaypoint) {
         waypoints.Add(newWaypoint);
-        followWaypoints = true;
         speed = fastSpeed;
+    }
+
+    public bool CheckIfFinishedWaypoints() {
+        return waypoints.Count <= 0;
     }
 }

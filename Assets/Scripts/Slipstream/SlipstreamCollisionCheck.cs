@@ -6,13 +6,18 @@ public class SlipstreamCollisionCheck : MonoBehaviour {
 
     public FollowSlipstream parentScript;
 
+    private bool hasEnteredStream = false;
+
 
     void OnTriggerEnter2D(Collider2D collider) {
         parentScript = gameObject.GetComponent<FollowSlipstream>();
-        if(!parentScript.CheckInSlipstream() || parentScript.waypoints.Count == 0) {
+
+        if(collider.tag.Equals("Waypoint") & !hasEnteredStream) {
             AddWaypoints();
+            hasEnteredStream = true;
+            gameObject.tag = "Follower";
         }
-        print("Truggered!!!!");
+
     }
 
 
