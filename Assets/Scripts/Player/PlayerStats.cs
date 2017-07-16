@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour {
 
@@ -12,5 +13,9 @@ public class PlayerStats : MonoBehaviour {
             GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
             Destroy(gameObject);
         } 
+    }
+
+    private void OnDestroy() {
+        SceneManager.LoadScene("Leaderboard");
     }
 }

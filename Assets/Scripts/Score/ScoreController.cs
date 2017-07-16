@@ -11,9 +11,26 @@ public class ScoreController : MonoBehaviour {
     public int highestNumOfFollowers = 0;
     private static float score = 1.0f;
     private float scoreMultiplier = 0.0f;
+    private float adjustedScore;
+
+
+    public string highScoreGameKey;
+    public bool bestScoreHigh;
+
+    private int currentScore;
+    private float[] bestScores = new float[5];
+    private float bestScore;
+    private string highScoreKey;
+
 
 
     void Start() {
+        bestScore = 0.0f;
+        for(int i = 0; i < bestScores.Length; i++) {
+            highScoreKey = highScoreGameKey + (i + 1).ToString();
+            bestScores[i] = PlayerPrefs.GetFloat(highScoreKey, 0.0f);
+        }
+
         lives = GameObject.FindGameObjectsWithTag("Lives");
         player = GameObject.FindGameObjectWithTag("Player");
         multiplier = GameObject.FindGameObjectWithTag("Multiplier");
@@ -30,7 +47,7 @@ public class ScoreController : MonoBehaviour {
 
     }
     void displayScore() {
-        float adjustedScore = score / 100;
+        adjustedScore = score / 100;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
     void setMutliplierFromFollowers() {
@@ -38,7 +55,6 @@ public class ScoreController : MonoBehaviour {
         scoreMultiplier = followers.Length;
         if (highestNumOfFollowers < followers.Length) {
             highestNumOfFollowers = followers.Length;
-            print(highestNumOfFollowers);
         }
     }
 
@@ -66,4 +82,22 @@ public class ScoreController : MonoBehaviour {
     }
 
 
+    private void OnDestroy() {
+        SaveScore();
+    }
+
+
+    public void SaveScore() {
+        for(int i = 0; i < bestScores.Length; i++) {
+            highScoreKey = highScoreGameKey + (i + 1).ToString();
+            bestScore = PlayerPrefs.GetInt(highScoreKey, 0);
+
+            if(adjustedScore > bestScore) {
+                PlayerPrefs.SetFloat(highScoreKey, adjustedScore);
+                adjustedScore = bestScore;
+                print("Saved score at position: " + i);
+            }
+        }
+        PlayerPrefs.Save();
+    }
 }
