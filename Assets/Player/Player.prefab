@@ -421,7 +421,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422984690076150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a68d79f57f08a0e428484c21a491c721, type: 3}
   m_Name: 
@@ -433,6 +433,9 @@ MonoBehaviour:
   directionToCamera: {x: 0, y: 0, z: -1}
   isTrigger: 1
   makeTrail: 1
+  transformToFollow: {fileID: 0}
+  mesh: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!114 &114359044062455768
 MonoBehaviour:
   m_ObjectHideFlags: 1

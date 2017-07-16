@@ -3683,11 +3683,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTimeMin: 20
-  spawnTimeMax: 20
+  spawnTimeMax: 50
   spawnPosXMin: -5
   spawnPosXMax: 15
   numToSpawnMin: 1
-  numToSpawnMax: 1
+  numToSpawnMax: 3
   obstacle: {fileID: 1337889734824698, guid: 29b5f19f198a9bc41b51ceaa05c204e4, type: 2}
   playerObject: {fileID: 143985944}
   minScale: 3
@@ -3721,7 +3721,7 @@ MonoBehaviour:
   spawnTimeMax: 20
   spawnPosXMin: -5
   spawnPosXMax: 15
-  numToSpawnMin: 5
+  numToSpawnMin: 1
   numToSpawnMax: 5
   obstacle: {fileID: 1856835554962374, guid: 8fa104fc0167481478896e8f91a8175a, type: 2}
   playerObject: {fileID: 143985944}
@@ -11098,8 +11098,14 @@ Prefab:
       propertyPath: health
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114021473823003634, guid: d2e0c221434166245acd5538c81a1435,
+        type: 2}
+      propertyPath: spawnTime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114672524155488778, guid: d2e0c221434166245acd5538c81a1435, type: 2}
+    - {fileID: 114277679287445452, guid: d2e0c221434166245acd5538c81a1435, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d2e0c221434166245acd5538c81a1435, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1264304090
