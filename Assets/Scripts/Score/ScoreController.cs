@@ -14,7 +14,7 @@ public class ScoreController : MonoBehaviour {
     void Start() {
         lives = GameObject.FindGameObjectsWithTag("Lives");
         player = GameObject.FindGameObjectWithTag("Player");
-        multiplier = GameObject.FindGameObjectWithTag("Mutliplier");
+        multiplier = GameObject.FindGameObjectWithTag("Multiplier");
     }
 
 	// Update is called once per frame

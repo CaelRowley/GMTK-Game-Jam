@@ -10735,7 +10735,7 @@ GameObject:
   - component: {fileID: 858576388}
   m_Layer: 5
   m_Name: Mulitplier
-  m_TagString: Untagged
+  m_TagString: Multiplier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10951,8 +10951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71a5b65ff78a9a48aa2c1b8054f1ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 949887465}
-  lives: []
 --- !u!1 &1019715417
 GameObject:
   m_ObjectHideFlags: 0
