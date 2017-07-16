@@ -12,7 +12,6 @@ public class CullBoxController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        print("youve been culled");
         Destroy(collider.gameObject);
     }
 }

@@ -46,7 +46,7 @@ public class SpawnObstacle : MonoBehaviour {
         float yPos = playerObject.transform.position.y - 50 + Random.Range(-25, 25);
         Vector3 spawnPoint = new Vector3(Random.Range(spawnPosXMin, spawnPosXMax), yPos, 0);
         GameObject newObstacle = Instantiate(obstacle, spawnPoint, randomRotation);
-        int newScale = Random.Range(minScale, maxScale);
+        float newScale = Random.Range(minScale, maxScale) / 10;
         newObstacle.transform.localScale += new Vector3(newScale, newScale, 0);
     }
 }
