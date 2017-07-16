@@ -25,7 +25,7 @@ public class PlayerMoveScript : MonoBehaviour {
     }
 
     void handleTiltInput() {
-        Vector3 rotation = new Vector3(0.0f, 0.0f, (Input.acceleration.x * 400.0f));
+        Vector3 rotation = new Vector3(0.0f, 0.0f, (Input.acceleration.x * 350.0f));
         transform.Rotate(rotation * Time.deltaTime);
     }
 
