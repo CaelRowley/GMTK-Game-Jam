@@ -21,6 +21,8 @@ public class FollowSlipstream : MonoBehaviour {
     
     private Vector3 defaultHeading = Vector3.down;
 
+    private bool inSlip = false;
+
 
     protected void Start() {
         xform = transform;
@@ -54,13 +56,22 @@ public class FollowSlipstream : MonoBehaviour {
             rigidmember.velocity = currentHeading * speed;
         else
             xform.position += currentHeading * Time.deltaTime * speed;
-        if(faceHeading)
-            xform.LookAt(xform.position + currentHeading);
 
-        if(waypoints.Count > 0) {
-            if(Vector3.Distance(xform.position, waypoints[targetwaypoint].position) <= waypointRadius) {
+        if (inSlip)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            xform.rotation = player.transform.rotation;
+        }
+
+        if (waypoints.Count > 0)
+        {
+            if (Vector3.Distance(xform.position, waypoints[targetwaypoint].position) <= waypointRadius)
+            {
                 waypoints.RemoveAt(0);
             }
+        }
+        else {
+            inSlip = false;
         }
     }
 
@@ -81,6 +92,7 @@ public class FollowSlipstream : MonoBehaviour {
 
     public void AddWaypoint(Transform newWaypoint) {
         waypoints.Add(newWaypoint);
+        inSlip = true;
         speed = fastSpeed;
     }
 
