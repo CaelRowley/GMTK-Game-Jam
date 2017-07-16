@@ -23,7 +23,6 @@ public class ScrollController : MonoBehaviour{
 
         if (usedOnce)
         {
-            print(player.transform.position.y);
             if (startPosition.y > player.transform.position.y)
             {
                 Instantiate(nextBackground, new Vector3(startPosition.x, startPosition.y - 40.0f, startPosition.z), startRotation);
