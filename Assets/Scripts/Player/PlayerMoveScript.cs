@@ -29,15 +29,15 @@ public class PlayerMoveScript : MonoBehaviour {
     }
 
     void playerCanNeverMoveBackwards() {
-        if (transform.eulerAngles.z > 90.0f & transform.eulerAngles.z < 180.0f)
+        if (transform.eulerAngles.z > 75.0f & transform.eulerAngles.z < 180.0f)
         {
-            Quaternion rotationBack90 = Quaternion.Euler(new Vector3(0.0f, 0.0f, 90.0f));
+            Quaternion rotationBack90 = Quaternion.Euler(new Vector3(0.0f, 0.0f, 75.0f));
             transform.rotation = rotationBack90;
 
         }
-        else if (transform.eulerAngles.z < 270.0f & transform.eulerAngles.z > 180.0f)
+        else if (transform.eulerAngles.z < 285.0f & transform.eulerAngles.z > 180.0f)
         {
-            Quaternion rotationBack = Quaternion.Euler(new Vector3(0.0f, 0.0f, 270.0f));
+            Quaternion rotationBack = Quaternion.Euler(new Vector3(0.0f, 0.0f, 285.0f));
             transform.rotation = rotationBack;
         }
     }
