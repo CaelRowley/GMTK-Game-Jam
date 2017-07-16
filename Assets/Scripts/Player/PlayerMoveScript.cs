@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMoveScript : MonoBehaviour {
     public float speed = 5.0F;
     public Transform target;
+    public float boundsLimit;
 
 
     void Start () {
@@ -42,13 +43,13 @@ public class PlayerMoveScript : MonoBehaviour {
         }
     }
     void keepPlayerInBounds() {
-        if (transform.position.x < -15.0f)
+        if (transform.position.x < -boundsLimit)
         {
             Quaternion rotationBackTo0Left = Quaternion.Euler(new Vector3(0.0f, 0.0f, 10.0f));
             transform.rotation = rotationBackTo0Left;
 
         }
-        else if (transform.position.x > 15.0f)
+        else if (transform.position.x > boundsLimit)
         {
             Quaternion rotationBackTo0Right = Quaternion.Euler(new Vector3(0.0f, 0.0f, 350.0f));
             transform.rotation = rotationBackTo0Right;

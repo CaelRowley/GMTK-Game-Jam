@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212998914505005194}
   - component: {fileID: 61674164804420714}
   - component: {fileID: 114398744114016266}
+  - component: {fileID: 114459317593088796}
   m_Layer: 0
   m_Name: Forcefield Pickup
   m_TagString: Untagged
@@ -79,6 +80,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerup: {fileID: 1352772349210652, guid: 98da3402dc01b0b408e9b20a6040ea1d, type: 2}
+--- !u!114 &114459317593088796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184770818175988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea142746b073a784ea279b20a88ff4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifespan: 10
 --- !u!212 &212998914505005194
 SpriteRenderer:
   m_ObjectHideFlags: 1
