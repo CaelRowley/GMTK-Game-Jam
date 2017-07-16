@@ -7,8 +7,10 @@ public class ScoreController : MonoBehaviour {
     private GameObject player;
     private GameObject multiplier;
     private GameObject[] lives;
+    private GameObject[] followers;
+    public int highestNumOfFollowers = 0;
     private static float score = 1.0f;
-    private float scoreMultiplier = 1.0f;
+    private float scoreMultiplier = 0.0f;
 
 
     void Start() {
@@ -19,29 +21,42 @@ public class ScoreController : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (scoreMultiplier >= 1)
-        {
-            score = score * scoreMultiplier;
-            multiplier.GetComponent<Text>().text = "x" + scoreMultiplier.ToString("0");
-        }
-        else {
-            multiplier.GetComponent<Text>().text = "";
-        }
-
-        score += 10;
-        
-        float adjustedScore = score / 1000;
-        gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
+        setMutliplierFromFollowers();
+        setMultiplierText();
+        displayScore();
 
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         removeLives(playerStats);
 
     }
+    void displayScore() {
+        float adjustedScore = score / 100;
+        gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
+    }
+    void setMutliplierFromFollowers() {
+        followers = GameObject.FindGameObjectsWithTag("Follower");
+        scoreMultiplier = followers.Length;
+        if (highestNumOfFollowers < followers.Length) {
+            highestNumOfFollowers = followers.Length;
+            print(highestNumOfFollowers);
+        }
+    }
+
+    void setMultiplierText() {
+        if (scoreMultiplier >= 1)
+        {
+            score = score + scoreMultiplier*10;
+            multiplier.GetComponent<Text>().text = "x" + scoreMultiplier.ToString("0");
+        }
+        else
+        {
+            multiplier.GetComponent<Text>().text = "";
+        }
+    }
     void removeLives(PlayerStats pStats) {
         if (pStats.health <= lives.Length)
         {
             Destroy(lives[pStats.health - 1]);
-            scoreMultiplier -= 1;
         }
     }
 
@@ -50,11 +65,5 @@ public class ScoreController : MonoBehaviour {
         return minusedScore;
     }
 
-    public void addScoreMultiplier() {
-        scoreMultiplier += 1;
-    }
-    public void removeScoreMultiplier() {
-        scoreMultiplier -= 1;
-    }
 
 }
