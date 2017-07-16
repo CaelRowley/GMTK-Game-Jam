@@ -81,7 +81,7 @@ public class ScoreController : MonoBehaviour {
             powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
             powerUpSpawnerScript.numToSpawnMin = 5;
-            playerMove.speed = 12.0f;
+            playerMove.speed = 11.0f;
         }
         else if (adjustedScore >= 3000)
         {
@@ -89,7 +89,7 @@ public class ScoreController : MonoBehaviour {
             powerUpSpawnerScript.spawnTimeMax = 3;
             astroidSpawnerScript.spawnTimeMax = 3;
             powerUpSpawnerScript.spawnTimeMax = 3;
-            playerMove.speed = 25.0f;
+            playerMove.speed = 12.0f;
         }
     }
 
