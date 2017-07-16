@@ -49,13 +49,13 @@ public class ScoreController : MonoBehaviour {
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         removeLives(playerStats);
 
-        SpawnObstacle astroidSpawnerScript = astroidSpawner.GetComponent<SpawnObstacle>();
-        SpawnObstacle powerUpSpawnerScript = powerUpShipSpawner.GetComponent<SpawnObstacle>();
-
         increaseDifficulty();
     }
 
     void increaseDifficulty() {
+        SpawnObstacle astroidSpawnerScript = astroidSpawner.GetComponent<SpawnObstacle>();
+        SpawnObstacle powerUpSpawnerScript = powerUpShipSpawner.GetComponent<SpawnObstacle>();
+
         if (adjustedScore >= 500 && adjustedScore < 750)
         {
             astroidSpawnerScript.numToSpawnMax = 10;
