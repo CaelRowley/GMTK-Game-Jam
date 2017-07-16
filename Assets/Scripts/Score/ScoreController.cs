@@ -78,7 +78,7 @@ public class ScoreController : MonoBehaviour {
             astroidSpawnerScript.numToSpawnMin = 6;
             powerUpSpawnerScript.numToSpawnMin = 4;
         }
-        else if (adjustedScore >= 1500)
+        else if (adjustedScore >= 3000)
         {
             astroidSpawnerScript.spawnTimeMax = 3;
             powerUpSpawnerScript.spawnTimeMax = 3;

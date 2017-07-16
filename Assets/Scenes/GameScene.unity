@@ -181,6 +181,57 @@ GameObject:
   m_PrefabParentObject: {fileID: 1579259789737610, guid: d2e0c221434166245acd5538c81a1435,
     type: 2}
   m_PrefabInternal: {fileID: 1209538744}
+--- !u!1 &179180025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 179180027}
+  - component: {fileID: 179180026}
+  m_Layer: 0
+  m_Name: AsteroidSpawner
+  m_TagString: AstroidCreator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &179180026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 179180025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimeMin: 10
+  spawnTimeMax: 20
+  spawnPosXMin: -18
+  spawnPosXMax: 18
+  numToSpawnMin: 2
+  numToSpawnMax: 5
+  obstacle: {fileID: 1856835554962374, guid: 8fa104fc0167481478896e8f91a8175a, type: 2}
+  playerObject: {fileID: 143985944}
+  minScale: 1
+  maxScale: 10
+  useRandomRotation: 1
+--- !u!4 &179180027
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 179180025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208532061
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +243,7 @@ GameObject:
   - component: {fileID: 208532063}
   - component: {fileID: 208532062}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Cull Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3597,6 +3648,57 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+--- !u!1 &245966413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 245966415}
+  - component: {fileID: 245966414}
+  m_Layer: 0
+  m_Name: PowerupShipSpawner
+  m_TagString: PowerUpShipCreator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &245966414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245966413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimeMin: 100
+  spawnTimeMax: 150
+  spawnPosXMin: -15
+  spawnPosXMax: 15
+  numToSpawnMin: 1
+  numToSpawnMax: 3
+  obstacle: {fileID: 1337889734824698, guid: 29b5f19f198a9bc41b51ceaa05c204e4, type: 2}
+  playerObject: {fileID: 143985944}
+  minScale: 3
+  maxScale: 3
+  useRandomRotation: 0
+--- !u!4 &245966415
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245966413}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351654345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,8 +3827,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 452021327}
-  - component: {fileID: 452021326}
-  - component: {fileID: 452021328}
   m_Layer: 0
   m_Name: Obstacle Controller
   m_TagString: Untagged
@@ -3734,28 +3834,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &452021326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 452021325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTimeMin: 100
-  spawnTimeMax: 150
-  spawnPosXMin: -15
-  spawnPosXMax: 15
-  numToSpawnMin: 1
-  numToSpawnMax: 3
-  obstacle: {fileID: 1337889734824698, guid: 29b5f19f198a9bc41b51ceaa05c204e4, type: 2}
-  playerObject: {fileID: 143985944}
-  minScale: 3
-  maxScale: 3
-  useRandomRotation: 0
 --- !u!4 &452021327
 Transform:
   m_ObjectHideFlags: 0
@@ -3769,28 +3847,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &452021328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 452021325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTimeMin: 10
-  spawnTimeMax: 20
-  spawnPosXMin: -18
-  spawnPosXMax: 18
-  numToSpawnMin: 2
-  numToSpawnMax: 5
-  obstacle: {fileID: 1856835554962374, guid: 8fa104fc0167481478896e8f91a8175a, type: 2}
-  playerObject: {fileID: 143985944}
-  minScale: 1
-  maxScale: 10
-  useRandomRotation: 1
 --- !u!1 &541748946
 GameObject:
   m_ObjectHideFlags: 0
