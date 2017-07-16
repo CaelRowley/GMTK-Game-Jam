@@ -55,33 +55,41 @@ public class ScoreController : MonoBehaviour {
     void increaseDifficulty() {
         SpawnObstacle astroidSpawnerScript = astroidSpawner.GetComponent<SpawnObstacle>();
         SpawnObstacle powerUpSpawnerScript = powerUpShipSpawner.GetComponent<SpawnObstacle>();
+        PlayerMoveScript playerMove = player.GetComponent<PlayerMoveScript>();
 
         if (adjustedScore >= 500 && adjustedScore < 750)
         {
             astroidSpawnerScript.numToSpawnMax = 10;
-            powerUpSpawnerScript.numToSpawnMax = 4;
+            powerUpSpawnerScript.numToSpawnMax = 8;
+            playerMove.speed = 8.0f;
         }
         else if (adjustedScore >= 750 && adjustedScore < 1000)
         {
             astroidSpawnerScript.numToSpawnMin = 4;
-            powerUpSpawnerScript.numToSpawnMin = 2;
+            powerUpSpawnerScript.numToSpawnMin = 4;
+            playerMove.speed = 9.0f;
         }
         else if (adjustedScore >= 1000 && adjustedScore < 1500)
         {
             astroidSpawnerScript.numToSpawnMax = 10;
-            powerUpSpawnerScript.numToSpawnMax = 5;
+            powerUpSpawnerScript.numToSpawnMax = 9;
+            playerMove.speed = 10.0f;
         }
         else if (adjustedScore >= 1500 && adjustedScore < 3000)
         {
             astroidSpawnerScript.numToSpawnMax = 15;
-            powerUpSpawnerScript.numToSpawnMax = 8;
+            powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
-            powerUpSpawnerScript.numToSpawnMin = 4;
+            powerUpSpawnerScript.numToSpawnMin = 5;
+            playerMove.speed = 11.0f;
         }
         else if (adjustedScore >= 3000)
         {
             astroidSpawnerScript.spawnTimeMax = 3;
             powerUpSpawnerScript.spawnTimeMax = 3;
+            astroidSpawnerScript.spawnTimeMax = 3;
+            powerUpSpawnerScript.spawnTimeMax = 3;
+            playerMove.speed = 12.0f;
         }
     }
 
