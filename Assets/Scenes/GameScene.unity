@@ -3675,7 +3675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimeMin: 100
+  spawnTimeMin: 50
   spawnTimeMax: 150
   spawnPosXMin: -15
   spawnPosXMax: 15
@@ -11106,6 +11106,11 @@ Prefab:
     - target: {fileID: 4634963211835976, guid: d2e0c221434166245acd5538c81a1435, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114619615511287866, guid: d2e0c221434166245acd5538c81a1435,
+        type: 2}
+      propertyPath: health
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2e0c221434166245acd5538c81a1435, type: 2}

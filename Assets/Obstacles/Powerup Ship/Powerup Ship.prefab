@@ -123,6 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   explosion: {fileID: 1309547563907556, guid: 645faca15ba63a343b8d5e7a81be36bc, type: 2}
+  invincible: 1
+  player: {fileID: 0}
+  invincibilityOffset: -15
 --- !u!114 &114286600000160824
 MonoBehaviour:
   m_ObjectHideFlags: 1

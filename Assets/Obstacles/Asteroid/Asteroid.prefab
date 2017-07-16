@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4414130db1c2c334ea7d3dc3587cb906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1309547563907556, guid: 645faca15ba63a343b8d5e7a81be36bc, type: 2}
   collisionDamage: 1
 --- !u!114 &114533467249371974
 MonoBehaviour:
@@ -128,6 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   explosion: {fileID: 1309547563907556, guid: 645faca15ba63a343b8d5e7a81be36bc, type: 2}
+  invincible: 1
+  player: {fileID: 0}
+  invincibilityOffset: -20
 --- !u!212 &212262958074625174
 SpriteRenderer:
   m_ObjectHideFlags: 1
