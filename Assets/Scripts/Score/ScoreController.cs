@@ -4,30 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour {
-    public GameObject player;
-    public GameObject[] lives;
-    private static float score = 0.0f;
-    private bool scoreMultiplier;
-    private bool scoreMultiplierTwo;
+    private GameObject player;
+    private GameObject multiplier;
+    private GameObject[] lives;
+    private static float score = 1.0f;
+    private float scoreMultiplier = 1.0f;
 
 
     void Start() {
         lives = GameObject.FindGameObjectsWithTag("Lives");
         player = GameObject.FindGameObjectWithTag("Player");
+        multiplier = GameObject.FindGameObjectWithTag("Mutliplier");
     }
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (scoreMultiplier) {
-            score += 20;
-        }
-        else if (scoreMultiplierTwo) {
-            score += 40;
-        }
-        else
+        if (scoreMultiplier >= 1)
         {
-            score += 10;
+            score = score * scoreMultiplier;
+            multiplier.GetComponent<Text>().text = "x" + scoreMultiplier.ToString("0");
         }
+        else {
+            multiplier.GetComponent<Text>().text = "";
+        }
+
+        score += 10;
         
         float adjustedScore = score / 1000;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
@@ -40,6 +41,7 @@ public class ScoreController : MonoBehaviour {
         if (pStats.health <= lives.Length)
         {
             Destroy(lives[pStats.health - 1]);
+            scoreMultiplier -= 1;
         }
     }
 
@@ -49,18 +51,10 @@ public class ScoreController : MonoBehaviour {
     }
 
     public void addScoreMultiplier() {
-        scoreMultiplier = true;
+        scoreMultiplier += 1;
     }
     public void removeScoreMultiplier() {
-        scoreMultiplier = false;
+        scoreMultiplier -= 1;
     }
 
-    public void addScoreMultiplierTwo()
-    {
-        scoreMultiplierTwo = true;
-    }
-    public void removeScoreMultiplierTwo()
-    {
-        scoreMultiplierTwo = false;
-    }
 }
