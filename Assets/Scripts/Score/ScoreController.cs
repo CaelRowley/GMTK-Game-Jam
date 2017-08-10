@@ -73,7 +73,7 @@ public class ScoreController : MonoBehaviour {
         {
             astroidSpawnerScript.numToSpawnMax = 10;
             powerUpSpawnerScript.numToSpawnMax = 5;
-            playerMove.speed = 13.5f;
+            playerMove.speed = 12.5f;
         }
         else if (adjustedScore >= 1500 && adjustedScore < 3000)
         {
@@ -81,7 +81,7 @@ public class ScoreController : MonoBehaviour {
             powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
             powerUpSpawnerScript.numToSpawnMin = 5;
-            playerMove.speed = 14.0f;
+            playerMove.speed = 13.0f;
         }
         else if (adjustedScore >= 3000)
         {
@@ -89,7 +89,7 @@ public class ScoreController : MonoBehaviour {
             powerUpSpawnerScript.spawnTimeMin = 20;
             astroidSpawnerScript.spawnTimeMax = 15;
             powerUpSpawnerScript.spawnTimeMax = 25;
-            playerMove.speed = 14.5f;
+            playerMove.speed = 14.0f;
         }
     }
 
@@ -140,6 +140,7 @@ public class ScoreController : MonoBehaviour {
 
     public void SaveScore() {
         for(int i = 0; i < bestScores.Length; i++) {
+            adjustedScore = 9999999999999;
             highScoreKey = highScoreGameKey + (i + 1).ToString();
             bestScore = PlayerPrefs.GetFloat(highScoreKey, 0);
 
