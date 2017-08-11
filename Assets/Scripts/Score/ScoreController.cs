@@ -140,7 +140,7 @@ public class ScoreController : MonoBehaviour {
 
     public void SaveScore() {
         for(int i = 0; i < bestScores.Length; i++) {
-            adjustedScore = 9999999999999;
+            //adjustedScore = 9999999999999;
             highScoreKey = highScoreGameKey + (i + 1).ToString();
             bestScore = PlayerPrefs.GetFloat(highScoreKey, 0);
 
