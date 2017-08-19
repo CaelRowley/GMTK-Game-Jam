@@ -29,15 +29,20 @@ public class LeaderboardManager : MonoBehaviour {
             highScores[i] = PlayerPrefs.GetFloat(highScoreKey, 0);
         }
 
-        highScore1.text = "First: " + highScores[0].ToString("0");
-        highScore2.text = "Second: " + highScores[1].ToString("0");
-        highScore3.text = "Third: " + highScores[2].ToString("0");
-        highScore4.text = "Fourth: " + highScores[3].ToString("0");
-        highScore5.text = "Fifth: " + highScores[4].ToString("0");
+        highScore1.text = highScores[0].ToString("0");
+        highScore2.text = highScores[1].ToString("0");
+        highScore3.text = highScores[2].ToString("0");
+        highScore4.text = highScores[3].ToString("0");
+        highScore5.text = highScores[4].ToString("0");
     }
 
 
     public void OnClickRestart() {
         SceneManager.LoadScene("GameScene");
+    }
+
+
+    public void OnClickExit() {
+        Application.Quit();
     }
 }
