@@ -8,9 +8,12 @@ public class Preloader : MonoBehaviour {
     private CanvasGroup fadeGroup;
     private float loadTime;
     public float logoTimeMin = 3.0f;
+    AsyncOperation loadingScene;
 
     private void Start() {
         fadeGroup = FindObjectOfType<CanvasGroup>();
+        loadingScene = SceneManager.LoadSceneAsync("MainMenu");
+        loadingScene.allowSceneActivation = false;
 
         fadeGroup.alpha = 1;
 
@@ -29,7 +32,7 @@ public class Preloader : MonoBehaviour {
         if(Time.time > logoTimeMin && loadTime != 0) {
             fadeGroup.alpha = Time.time - logoTimeMin;
             if(fadeGroup.alpha >= 1) {
-                SceneManager.LoadScene("MainMenu");
+                loadingScene.allowSceneActivation = true;
             }
         }
     }
