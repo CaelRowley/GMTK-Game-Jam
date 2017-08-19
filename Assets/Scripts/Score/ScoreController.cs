@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +9,11 @@ public class ScoreController : MonoBehaviour {
     private GameObject multiplier;
     private GameObject astroidSpawner;
     private GameObject powerUpShipSpawner;
-    private GameObject[] lives;
+    private GameObject lifeIcon;
+    private GameObject[] lives = new GameObject[8];
     private GameObject[] followers;
+    private PlayerStats playerStats;
+    private GameObject gameCanvas;
     public int numOfFollowers;
     public float score = 1.0f;
     private float scoreMultiplier = 0.0f;
@@ -32,12 +36,16 @@ public class ScoreController : MonoBehaviour {
             highScoreKey = highScoreGameKey + (i + 1).ToString();
             bestScores[i] = PlayerPrefs.GetFloat(highScoreKey, 0.0f);
         }
-
-        lives = GameObject.FindGameObjectsWithTag("Lives");
+        gameCanvas = GameObject.FindGameObjectWithTag("Canvas");
+        lifeIcon = GameObject.FindGameObjectWithTag("Lives");
         player = GameObject.FindGameObjectWithTag("Player");
         multiplier = GameObject.FindGameObjectWithTag("Multiplier");
         astroidSpawner = GameObject.FindGameObjectWithTag("AstroidCreator");
         powerUpShipSpawner = GameObject.FindGameObjectWithTag("PowerUpShipCreator");
+
+        lives[0] = lifeIcon;
+        playerStats = player.GetComponent<PlayerStats>();
+        createLives(playerStats);
     }
 
 	// Update is called once per frame
@@ -45,35 +53,48 @@ public class ScoreController : MonoBehaviour {
         setMutliplierFromFollowers();
         setMultiplierText();
         displayScore();
-
-        PlayerStats playerStats = player.GetComponent<PlayerStats>();
         removeLives(playerStats);
-
         increaseDifficulty();
+    }
+
+    private void createLives(PlayerStats playerStats) {
+        for (int i = 1; i < playerStats.health-1; i++) {
+            createLifeUI(i);
+        }
+    }
+
+    void createLifeUI(int life) {
+        Vector3 newPosition = new Vector3(lives[life - 1].transform.position.x - 1.00f, lifeIcon.transform.position.y, lifeIcon.transform.position.z);
+        GameObject newLife = Instantiate(lifeIcon, newPosition, lifeIcon.transform.rotation, gameCanvas.transform);
+        lives[life] = newLife;
     }
 
     void increaseDifficulty() {
         SpawnObstacle astroidSpawnerScript = astroidSpawner.GetComponent<SpawnObstacle>();
         SpawnObstacle powerUpSpawnerScript = powerUpShipSpawner.GetComponent<SpawnObstacle>();
         PlayerMoveScript playerMove = player.GetComponent<PlayerMoveScript>();
-
-        if (adjustedScore >= 500 && adjustedScore < 750)
+        
+        if (adjustedScore >= 200 && adjustedScore < 500)
+        {
+            playerMove.speed = 11.5f;
+        }
+        else if (adjustedScore >= 500 && adjustedScore < 750)
         {
             astroidSpawnerScript.numToSpawnMax = 8;
             powerUpSpawnerScript.numToSpawnMax = 3;
-            playerMove.speed = 11.0f;
+            playerMove.speed = 12.0f;
         }
         else if (adjustedScore >= 750 && adjustedScore < 1000)
         {
             astroidSpawnerScript.numToSpawnMin = 4;
             powerUpSpawnerScript.numToSpawnMin = 2;
-            playerMove.speed = 12.0f;
+            playerMove.speed = 12.5f;
         }
         else if (adjustedScore >= 1000 && adjustedScore < 1500)
         {
             astroidSpawnerScript.numToSpawnMax = 10;
             powerUpSpawnerScript.numToSpawnMax = 5;
-            playerMove.speed = 12.5f;
+            playerMove.speed = 13.0f;
         }
         else if (adjustedScore >= 1500 && adjustedScore < 3000)
         {
@@ -81,7 +102,7 @@ public class ScoreController : MonoBehaviour {
             powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
             powerUpSpawnerScript.numToSpawnMin = 5;
-            playerMove.speed = 13.0f;
+            playerMove.speed = 13.5f;
         }
         else if (adjustedScore >= 3000)
         {
@@ -89,12 +110,13 @@ public class ScoreController : MonoBehaviour {
             powerUpSpawnerScript.spawnTimeMin = 20;
             astroidSpawnerScript.spawnTimeMax = 15;
             powerUpSpawnerScript.spawnTimeMax = 25;
-            playerMove.speed = 14.0f;
+            playerMove.speed = 14.5f;
         }
     }
 
     void displayScore() {
         adjustedScore = score / 100;
+        //adjustedScore = 3001;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
 
@@ -121,7 +143,7 @@ public class ScoreController : MonoBehaviour {
         }
     }
     void removeLives(PlayerStats pStats) {
-        if (pStats.health <= lives.Length)
+        if (pStats.health <= lives.Length && pStats.health>0)
         {
             Destroy(lives[pStats.health - 1]);
         }
