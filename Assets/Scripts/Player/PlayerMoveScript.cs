@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,20 @@ public class PlayerMoveScript : MonoBehaviour {
         playerCanNeverMoveBackwards();
         playerMoveFoward();
         handleTiltInput();
+        moveWithKeys();
+    }
+
+    private void moveWithKeys()
+    {
+        if (Input.GetKey("a")){
+            Vector3 rotation = new Vector3(0.0f, 0.0f, -90.0f);
+            transform.Rotate(rotation * Time.deltaTime);
+        }
+        if (Input.GetKey("d")){
+            Vector3 rotation = new Vector3(0.0f, 0.0f, 90.0f);
+            transform.Rotate(rotation * Time.deltaTime);
+        }
+            
     }
 
     void playerMoveFoward() {
