@@ -11,7 +11,9 @@ public class BackgroundMusic : MonoBehaviour {
 
    // Creates audio sources as children to Player
    private void Start() {
-      for(int i = 0; i < 2; i++) {
+        DontDestroyOnLoad(this.gameObject);
+
+        for(int i = 0; i < 2; i++) {
          GameObject child = new GameObject("Music Player");
          child.transform.parent = gameObject.transform;
          audioSources[i] = child.AddComponent<AudioSource>();

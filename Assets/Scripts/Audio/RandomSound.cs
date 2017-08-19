@@ -7,7 +7,7 @@ public class RandomSound : MonoBehaviour {
     // Creates audio sources as children to Player
     private void Start() {
         AudioSource audioSource = new AudioSource();
-        GameObject child = new GameObject("Music Player");
+        GameObject child = new GameObject("Audio Player");
         int randomNum = Random.Range(0, audioClips.Length);
 
         child.transform.parent = gameObject.transform;

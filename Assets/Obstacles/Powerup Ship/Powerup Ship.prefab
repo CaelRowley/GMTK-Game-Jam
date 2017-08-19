@@ -122,10 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  explosion: {fileID: 1309547563907556, guid: 645faca15ba63a343b8d5e7a81be36bc, type: 2}
+  explosion: {fileID: 1909841699451952, guid: 720e24c47033f8a40bed1fe509fa6cff, type: 2}
   invincible: 1
   player: {fileID: 0}
-  score: {fileID: 0}
   invincibilityOffset: -15
 --- !u!114 &114286600000160824
 MonoBehaviour:
@@ -155,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDamage: 1
+  score: {fileID: 0}
 --- !u!114 &114804797812156410
 MonoBehaviour:
   m_ObjectHideFlags: 1
