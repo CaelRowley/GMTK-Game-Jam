@@ -13,7 +13,7 @@ public class PowerupController : MonoBehaviour {
 
     public void activatePowerUp(GameObject powerup) {
         activatedPowerup = GameObject.FindGameObjectsWithTag("Powerup");
-        if(activatedPowerup.Length < 1) {
+        if(activatedPowerup.Length < 100) {
             Vector3 spawnPoint = new Vector3(attachedObject.transform.position.x + spawnPosX, attachedObject.transform.position.y + spawnPosY, attachedObject.transform.position.z);
             GameObject newPickup = Instantiate(powerup, spawnPoint, attachedObject.transform.rotation);
             if(spawnAsChild)
