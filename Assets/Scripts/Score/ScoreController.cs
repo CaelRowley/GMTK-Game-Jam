@@ -10,7 +10,8 @@ public class ScoreController : MonoBehaviour {
     private GameObject astroidSpawner;
     private GameObject powerUpShipSpawner;
     private GameObject lifeIcon;
-    private GameObject[] lives = new GameObject[8];
+    //private GameObject[] lives = new GameObject[8];
+    private List<GameObject> lives = new List<GameObject>();
     private GameObject[] followers;
     private PlayerStats playerStats;
     private GameObject gameCanvas;
@@ -43,69 +44,66 @@ public class ScoreController : MonoBehaviour {
         astroidSpawner = GameObject.FindGameObjectWithTag("AstroidCreator");
         powerUpShipSpawner = GameObject.FindGameObjectWithTag("PowerUpShipCreator");
 
-        lives[0] = lifeIcon;
+        lives.Add(lifeIcon);
         playerStats = player.GetComponent<PlayerStats>();
-        createLives(playerStats);
+        //createLives();
     }
 
-	// Update is called once per frame
-	void FixedUpdate () {
+    // Update is called once per frame
+    void FixedUpdate() {
+        int currentHealth = playerStats.health;
+        removeLives(currentHealth);
         setMutliplierFromFollowers();
         setMultiplierText();
         displayScore();
-        removeLives(playerStats);
         increaseDifficulty();
+        addLives(currentHealth);
     }
 
-    private void createLives(PlayerStats playerStats) {
-        for (int i = 1; i < playerStats.health-1; i++) {
-            createLifeUI(i);
+    //    private void createLives() {
+    //        for(int i = 1; i < playerStats.health - 1; i++) {
+    //            createLifeUI(i);
+    //        }
+    //    }
+
+    void createLifeUI(int life, int currentHealth) {
+        if(lives.Count == 0) {
+            lives.Add(lifeIcon);
+        } else if(lives.Count < 8) {
+            print("fudge: " + lives[life - 1].transform.position.x);
+            Vector3 newPosition = new Vector3(lives[life - 1].transform.position.x - 1.00f, lifeIcon.transform.position.y, lifeIcon.transform.position.z);
+            GameObject newLife = Instantiate(lifeIcon, newPosition, lifeIcon.transform.rotation, gameCanvas.transform);
+            lives.Add(newLife);
         }
-    }
 
-    void createLifeUI(int life) {
-        Vector3 newPosition = new Vector3(lives[life - 1].transform.position.x - 1.00f, lifeIcon.transform.position.y, lifeIcon.transform.position.z);
-        GameObject newLife = Instantiate(lifeIcon, newPosition, lifeIcon.transform.rotation, gameCanvas.transform);
-        lives[life] = newLife;
     }
 
     void increaseDifficulty() {
         SpawnObstacle astroidSpawnerScript = astroidSpawner.GetComponent<SpawnObstacle>();
         SpawnObstacle powerUpSpawnerScript = powerUpShipSpawner.GetComponent<SpawnObstacle>();
         PlayerMoveScript playerMove = player.GetComponent<PlayerMoveScript>();
-        
-        if (adjustedScore >= 200 && adjustedScore < 500)
-        {
+
+        if(adjustedScore >= 200 && adjustedScore < 500) {
             playerMove.speed = 11.5f;
-        }
-        else if (adjustedScore >= 500 && adjustedScore < 750)
-        {
+        } else if(adjustedScore >= 500 && adjustedScore < 750) {
             astroidSpawnerScript.numToSpawnMax = 8;
             powerUpSpawnerScript.numToSpawnMax = 3;
             playerMove.speed = 12.0f;
-        }
-        else if (adjustedScore >= 750 && adjustedScore < 1000)
-        {
+        } else if(adjustedScore >= 750 && adjustedScore < 1000) {
             astroidSpawnerScript.numToSpawnMin = 4;
             powerUpSpawnerScript.numToSpawnMin = 2;
             playerMove.speed = 12.5f;
-        }
-        else if (adjustedScore >= 1000 && adjustedScore < 1500)
-        {
+        } else if(adjustedScore >= 1000 && adjustedScore < 1500) {
             astroidSpawnerScript.numToSpawnMax = 10;
             powerUpSpawnerScript.numToSpawnMax = 5;
             playerMove.speed = 13.0f;
-        }
-        else if (adjustedScore >= 1500 && adjustedScore < 3000)
-        {
+        } else if(adjustedScore >= 1500 && adjustedScore < 3000) {
             astroidSpawnerScript.numToSpawnMax = 15;
             powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
             powerUpSpawnerScript.numToSpawnMin = 5;
             playerMove.speed = 13.5f;
-        }
-        else if (adjustedScore >= 3000)
-        {
+        } else if(adjustedScore >= 3000) {
             astroidSpawnerScript.spawnTimeMin = 10;
             powerUpSpawnerScript.spawnTimeMin = 20;
             astroidSpawnerScript.spawnTimeMax = 15;
@@ -123,7 +121,7 @@ public class ScoreController : MonoBehaviour {
     void setMutliplierFromFollowers() {
         followers = GameObject.FindGameObjectsWithTag("Follower");
         scoreMultiplier = followers.Length;
-        if (numOfFollowers > followers.Length) {
+        if(numOfFollowers > followers.Length) {
             numOfFollowers = followers.Length;
             score -= 10000;
         } else {
@@ -132,25 +130,34 @@ public class ScoreController : MonoBehaviour {
     }
 
     void setMultiplierText() {
-        if (scoreMultiplier >= 1)
-        {
-            score = score + scoreMultiplier*10;
+        if(scoreMultiplier >= 1) {
+            score = score + scoreMultiplier * 10;
             multiplier.GetComponent<Text>().text = "x" + scoreMultiplier.ToString("0");
-        }
-        else
-        {
+        } else {
             multiplier.GetComponent<Text>().text = "";
         }
     }
-    void removeLives(PlayerStats pStats) {
-        if (pStats.health <= lives.Length && pStats.health>0)
-        {
-            Destroy(lives[pStats.health - 1]);
+
+    void addLives(int currentHealth) {
+        print("Lives: " + lives.Count);
+        print("PLayer Heal: " + playerStats.health);
+        print("Currebt Heal: " + currentHealth);
+
+        if(currentHealth - 1 > lives.Count && currentHealth <= 8) {
+            //print("PLayer Heal: " + playerStats.health);
+            createLifeUI(lives.Count, currentHealth);
+        }
+    }
+
+    void removeLives(int currentHealth) {
+        if(currentHealth <= lives.Count && currentHealth > 0) {
+            Destroy(lives[currentHealth - 1]);
+            lives.RemoveAt(currentHealth - 1);
         }
     }
 
     float removeScore(float dividedBy) {
-        float minusedScore = score/2;
+        float minusedScore = score / 2;
         return minusedScore;
     }
 

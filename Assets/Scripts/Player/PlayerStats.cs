@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour {
 
     public int health;
+    public int maxHealth = 8;
     public GameObject explosion;
 
     private void Start() {
@@ -13,6 +14,10 @@ public class PlayerStats : MonoBehaviour {
     }
 
     private void Update() {
+        if(health > maxHealth) {
+            health = maxHealth;
+        }
+
         if(health <= 0) {
             GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
             StartCoroutine("LoadLeaderboard");

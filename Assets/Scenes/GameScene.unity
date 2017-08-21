@@ -5644,7 +5644,7 @@ Prefab:
     - target: {fileID: 114619615511287866, guid: d2e0c221434166245acd5538c81a1435,
         type: 2}
       propertyPath: health
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114162102528970280, guid: d2e0c221434166245acd5538c81a1435,
         type: 2}
@@ -6599,6 +6599,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2112574195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2112574197}
+  - component: {fileID: 2112574196}
+  m_Layer: 0
+  m_Name: HealthShipSpawner
+  m_TagString: PowerUpShipCreator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2112574196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2112574195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimeMin: 15
+  spawnTimeMax: 15
+  spawnPosXMin: -15
+  spawnPosXMax: 15
+  numToSpawnMin: 1
+  numToSpawnMax: 2
+  obstacle: {fileID: 1274256295870094, guid: 651c9a42dc1355c46a9fa6006a7f8857, type: 2}
+  playerObject: {fileID: 143985944}
+  minScale: 20
+  maxScale: 40
+  useRandomRotation: 0
+--- !u!4 &2112574197
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2112574195}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2136186849
 GameObject:
