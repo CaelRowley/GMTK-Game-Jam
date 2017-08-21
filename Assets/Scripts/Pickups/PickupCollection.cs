@@ -9,6 +9,7 @@ public class PickupCollection : MonoBehaviour {
         if(collider.gameObject.tag.Equals("Player")) {
             PowerupController powerupController = collider.gameObject.GetComponent<PowerupController>();
             powerupController.activatePowerUp(powerup);
+            Destroy(gameObject);
         }
     }
 }

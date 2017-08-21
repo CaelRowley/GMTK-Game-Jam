@@ -9,6 +9,12 @@ public class ObstacleStats : MonoBehaviour {
     public GameObject player;
     public float invincibilityOffset;
 
+    public bool spawnPickup;
+    public GameObject pickup;
+    public GameObject attachedObject;
+    public float spawnPosX;
+    public float spawnPosY;
+
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -19,6 +25,10 @@ public class ObstacleStats : MonoBehaviour {
             if(invincible)
                 health = 1;
             else {
+                if(spawnPickup) {
+                    Vector3 spawnPoint = new Vector3(attachedObject.transform.position.x + spawnPosX, attachedObject.transform.position.y + spawnPosY, attachedObject.transform.position.z);
+                    GameObject newPickup = Instantiate(pickup, spawnPoint, attachedObject.transform.rotation);
+                }
                 GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
                 Destroy(gameObject);
             }

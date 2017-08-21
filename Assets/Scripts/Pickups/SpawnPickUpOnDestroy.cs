@@ -10,7 +10,10 @@ public class SpawnPickUpOnDestroy : MonoBehaviour {
 
 
     void OnDestroy() {
-        Vector3 spawnPoint = new Vector3(attachedObject.transform.position.x + spawnPosX, attachedObject.transform.position.y + spawnPosY, attachedObject.transform.position.z);
-        GameObject newPickup = Instantiate(pickup, spawnPoint, attachedObject.transform.rotation);
+        GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
+        if(player.Length > 0) {
+            Vector3 spawnPoint = new Vector3(attachedObject.transform.position.x + spawnPosX, attachedObject.transform.position.y + spawnPosY, attachedObject.transform.position.z);
+            GameObject newPickup = Instantiate(pickup, spawnPoint, attachedObject.transform.rotation);
+        }  
     }
 }
