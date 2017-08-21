@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4524066636985302}
   - component: {fileID: 212823864042190726}
-  - component: {fileID: 114245872533352648}
   m_Layer: 0
   m_Name: Health Pickup In Ship
   m_TagString: Untagged
@@ -41,21 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114245872533352648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1677263296922422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e3c6993cf952a547828c67c6d9e4708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickup: {fileID: 1363294724776304, guid: 1d579ee954600e74e96599c48c1a8844, type: 2}
-  attachedObject: {fileID: 1677263296922422}
-  spawnPosX: 0
-  spawnPosY: 0
 --- !u!212 &212823864042190726
 SpriteRenderer:
   m_ObjectHideFlags: 1

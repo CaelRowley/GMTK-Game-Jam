@@ -185,6 +185,11 @@ MonoBehaviour:
   invincible: 1
   player: {fileID: 0}
   invincibilityOffset: -15
+  spawnPickup: 1
+  pickup: {fileID: 1363294724776304, guid: 1d579ee954600e74e96599c48c1a8844, type: 2}
+  attachedObject: {fileID: 1274256295870094}
+  spawnPosX: 0
+  spawnPosY: 0
 --- !u!212 &212495650593324094
 SpriteRenderer:
   m_ObjectHideFlags: 1
