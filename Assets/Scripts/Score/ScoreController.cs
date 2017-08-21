@@ -10,7 +10,6 @@ public class ScoreController : MonoBehaviour {
     private GameObject astroidSpawner;
     private GameObject powerUpShipSpawner;
     private GameObject lifeIcon;
-    //private GameObject[] lives = new GameObject[8];
     private List<GameObject> lives = new List<GameObject>();
     private GameObject[] followers;
     private PlayerStats playerStats;
@@ -23,6 +22,11 @@ public class ScoreController : MonoBehaviour {
 
     public string highScoreGameKey;
     public bool bestScoreHigh;
+
+    private Transform firstLifeTransform;
+    private float firstLifeX;
+    private float firstLifeY;
+    private float firstLifeZ;
 
     private int currentScore;
     private float[] bestScores = new float[5];
@@ -38,15 +42,12 @@ public class ScoreController : MonoBehaviour {
             bestScores[i] = PlayerPrefs.GetFloat(highScoreKey, 0.0f);
         }
         gameCanvas = GameObject.FindGameObjectWithTag("Canvas");
-        lifeIcon = GameObject.FindGameObjectWithTag("Lives");
+        lifeIcon = GameObject.FindGameObjectWithTag("LifeIcon");
         player = GameObject.FindGameObjectWithTag("Player");
         multiplier = GameObject.FindGameObjectWithTag("Multiplier");
         astroidSpawner = GameObject.FindGameObjectWithTag("AstroidCreator");
         powerUpShipSpawner = GameObject.FindGameObjectWithTag("PowerUpShipCreator");
-
-        lives.Add(lifeIcon);
         playerStats = player.GetComponent<PlayerStats>();
-        //createLives();
     }
 
     // Update is called once per frame
@@ -60,18 +61,14 @@ public class ScoreController : MonoBehaviour {
         addLives(currentHealth);
     }
 
-    //    private void createLives() {
-    //        for(int i = 1; i < playerStats.health - 1; i++) {
-    //            createLifeUI(i);
-    //        }
-    //    }
-
     void createLifeUI(int life, int currentHealth) {
+        print(lives.Count);
         if(lives.Count == 0) {
-            lives.Add(lifeIcon);
+            Vector3 newPosition = new Vector3(lifeIcon.transform.position.x - 2.0f, lifeIcon.transform.position.y, firstLifeZ);
+            GameObject newLife = Instantiate(lifeIcon, newPosition, lifeIcon.transform.rotation, gameCanvas.transform);
+            lives.Add(newLife);
         } else if(lives.Count < 8) {
-            print("fudge: " + lives[life - 1].transform.position.x);
-            Vector3 newPosition = new Vector3(lives[life - 1].transform.position.x - 1.00f, lifeIcon.transform.position.y, lifeIcon.transform.position.z);
+            Vector3 newPosition = new Vector3(lives[life - 1].transform.position.x - 1.00f, lives[life - 1].transform.position.y, lives[life - 1].transform.position.z);
             GameObject newLife = Instantiate(lifeIcon, newPosition, lifeIcon.transform.rotation, gameCanvas.transform);
             lives.Add(newLife);
         }
@@ -139,12 +136,7 @@ public class ScoreController : MonoBehaviour {
     }
 
     void addLives(int currentHealth) {
-        print("Lives: " + lives.Count);
-        print("PLayer Heal: " + playerStats.health);
-        print("Currebt Heal: " + currentHealth);
-
         if(currentHealth - 1 > lives.Count && currentHealth <= 8) {
-            //print("PLayer Heal: " + playerStats.health);
             createLifeUI(lives.Count, currentHealth);
         }
     }
