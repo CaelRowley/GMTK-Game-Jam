@@ -24,11 +24,11 @@ public class PlayerMoveScript : MonoBehaviour {
     private void moveWithKeys()
     {
         if (Input.GetKey("a")){
-            Vector3 rotation = new Vector3(0.0f, 0.0f, -90.0f);
+            Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
             transform.Rotate(rotation * Time.deltaTime);
         }
         if (Input.GetKey("d")){
-            Vector3 rotation = new Vector3(0.0f, 0.0f, 90.0f);
+            Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
             transform.Rotate(rotation * Time.deltaTime);
         }
             

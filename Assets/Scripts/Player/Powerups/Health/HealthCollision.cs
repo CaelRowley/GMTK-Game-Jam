@@ -8,7 +8,6 @@ public class HealthCollision : MonoBehaviour {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         PlayerStats playerStats = player.gameObject.GetComponent<PlayerStats>();
         playerStats.health += 2;
-        Debug.Log(playerStats.health);
         Destroy(gameObject);
     }
 }
