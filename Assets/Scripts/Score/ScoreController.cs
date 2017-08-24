@@ -79,19 +79,19 @@ public class ScoreController : MonoBehaviour {
 
         if (adjustedScore >= 200 && adjustedScore < 500)
         {
-            playerMove.speed = 11.5f;
+            playerMove.speed = 11.0f;
         }
         else if (adjustedScore >= 500 && adjustedScore < 750)
         {
             astroidSpawnerScript.numToSpawnMax = 8;
             powerUpSpawnerScript.numToSpawnMax = 3;
-            playerMove.speed = 12.0f;
+            playerMove.speed = 11.5f;
         }
         else if (adjustedScore >= 750 && adjustedScore < 1000)
         {
             astroidSpawnerScript.numToSpawnMin = 4;
             powerUpSpawnerScript.numToSpawnMin = 2;
-            playerMove.speed = 12.5f;
+            playerMove.speed = 12.0f;
         }
         else if (adjustedScore >= 1000 && adjustedScore < 1500)
         {
@@ -102,24 +102,20 @@ public class ScoreController : MonoBehaviour {
         else if (adjustedScore >= 1500 && adjustedScore < 3000)
         {
             astroidSpawnerScript.numToSpawnMax = 15;
-            powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
-            powerUpSpawnerScript.numToSpawnMin = 5;
             playerMove.speed = 13.5f;
         }
         else if (adjustedScore >= 3000)
         {
             astroidSpawnerScript.spawnTimeMin = 10;
-            powerUpSpawnerScript.spawnTimeMin = 20;
             astroidSpawnerScript.spawnTimeMax = 15;
-            powerUpSpawnerScript.spawnTimeMax = 25;
-            playerMove.speed = 14.5f;
+            playerMove.speed = 15.0f;
         }
     }
 
     void displayScore() {
         adjustedScore = score / 100;
-        //adjustedScore = 30001;
+        //adjustedScore = 1501;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
 
