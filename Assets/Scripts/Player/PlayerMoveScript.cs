@@ -2,33 +2,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMoveScript : MonoBehaviour {
     public float speed;
     public Transform target;
     public float boundsLimit;
 
-
-    void Start () {
-        
+    void Start() {
     }
 
-    void FixedUpdate(){
+    void FixedUpdate() {
         keepPlayerInBounds();
         playerCanNeverMoveBackwards();
         playerMoveFoward();
-        handleTiltInput();
+        //handleTiltInput();
+        handleTouchScreen();
         moveWithKeys();
+    }
+
+    private void handleTouchScreen() {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
+        {
+            Vector2 touchPosition = Input.GetTouch(0).position;
+
+            if (touchPosition.x < 335.0f) {
+                Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
+                transform.Rotate(rotation * Time.deltaTime);
+
+            }else if(touchPosition.x > 335.0f){
+                Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
+                transform.Rotate(rotation * Time.deltaTime);
+            }
+        }
     }
 
     private void moveWithKeys()
     {
         if (Input.GetKey("a")){
-            Vector3 rotation = new Vector3(0.0f, 0.0f, -90.0f);
+            Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
             transform.Rotate(rotation * Time.deltaTime);
         }
         if (Input.GetKey("d")){
-            Vector3 rotation = new Vector3(0.0f, 0.0f, 90.0f);
+            Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
             transform.Rotate(rotation * Time.deltaTime);
         }
             
@@ -40,7 +56,8 @@ public class PlayerMoveScript : MonoBehaviour {
     }
 
     void handleTiltInput() {
-        Vector3 rotation = new Vector3(0.0f, 0.0f, (Input.acceleration.x * 350.0f));
+        //Vector3 rotation = new Vector3(0.0f, 0.0f, (Input.acceleration.x * 350.0f));
+        Vector3 rotation = new Vector3(0.0f, 0.0f, (Input.acceleration.x * 400.0f));
         transform.Rotate(rotation * Time.deltaTime);
     }
 
