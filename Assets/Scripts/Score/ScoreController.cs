@@ -24,8 +24,6 @@ public class ScoreController : MonoBehaviour {
     public bool bestScoreHigh;
 
     private Transform firstLifeTransform;
-    private float firstLifeX;
-    private float firstLifeY;
     private float firstLifeZ;
 
     private int currentScore;
@@ -61,8 +59,7 @@ public class ScoreController : MonoBehaviour {
         addLives(currentHealth);
     }
 
-    void createLifeUI(int life, int currentHealth) {
-        print(lives.Count);
+    void createLifeUI(int life) {
         if(lives.Count == 0) {
             Vector3 newPosition = new Vector3(lifeIcon.transform.position.x - 2.0f, lifeIcon.transform.position.y, firstLifeZ);
             GameObject newLife = Instantiate(lifeIcon, newPosition, lifeIcon.transform.rotation, gameCanvas.transform);
@@ -80,38 +77,45 @@ public class ScoreController : MonoBehaviour {
         SpawnObstacle powerUpSpawnerScript = powerUpShipSpawner.GetComponent<SpawnObstacle>();
         PlayerMoveScript playerMove = player.GetComponent<PlayerMoveScript>();
 
-        if(adjustedScore >= 200 && adjustedScore < 500) {
-            playerMove.speed = 11.5f;
-        } else if(adjustedScore >= 500 && adjustedScore < 750) {
+        if (adjustedScore >= 200 && adjustedScore < 500)
+        {
+            playerMove.speed = 11.0f;
+        }
+        else if (adjustedScore >= 500 && adjustedScore < 750)
+        {
             astroidSpawnerScript.numToSpawnMax = 8;
             powerUpSpawnerScript.numToSpawnMax = 3;
-            playerMove.speed = 12.0f;
-        } else if(adjustedScore >= 750 && adjustedScore < 1000) {
+            playerMove.speed = 11.5f;
+        }
+        else if (adjustedScore >= 750 && adjustedScore < 1000)
+        {
             astroidSpawnerScript.numToSpawnMin = 4;
             powerUpSpawnerScript.numToSpawnMin = 2;
-            playerMove.speed = 12.5f;
-        } else if(adjustedScore >= 1000 && adjustedScore < 1500) {
+            playerMove.speed = 12.0f;
+        }
+        else if (adjustedScore >= 1000 && adjustedScore < 1500)
+        {
             astroidSpawnerScript.numToSpawnMax = 10;
             powerUpSpawnerScript.numToSpawnMax = 5;
             playerMove.speed = 13.0f;
-        } else if(adjustedScore >= 1500 && adjustedScore < 3000) {
+        }
+        else if (adjustedScore >= 1500 && adjustedScore < 3000)
+        {
             astroidSpawnerScript.numToSpawnMax = 15;
-            powerUpSpawnerScript.numToSpawnMax = 10;
             astroidSpawnerScript.numToSpawnMin = 6;
-            powerUpSpawnerScript.numToSpawnMin = 5;
             playerMove.speed = 13.5f;
-        } else if(adjustedScore >= 3000) {
+        }
+        else if (adjustedScore >= 3000)
+        {
             astroidSpawnerScript.spawnTimeMin = 10;
-            powerUpSpawnerScript.spawnTimeMin = 20;
             astroidSpawnerScript.spawnTimeMax = 15;
-            powerUpSpawnerScript.spawnTimeMax = 25;
-            playerMove.speed = 14.5f;
+            playerMove.speed = 15.0f;
         }
     }
 
     void displayScore() {
         adjustedScore = score / 100;
-        //adjustedScore = 30001;
+        //adjustedScore = 1501;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
 
@@ -137,7 +141,7 @@ public class ScoreController : MonoBehaviour {
 
     void addLives(int currentHealth) {
         if(currentHealth - 1 > lives.Count && currentHealth <= 8) {
-            createLifeUI(lives.Count, currentHealth);
+            createLifeUI(lives.Count);
         }
     }
 
@@ -160,6 +164,7 @@ public class ScoreController : MonoBehaviour {
 
 
     public void SaveScore() {
+
         for(int i = 0; i < bestScores.Length; i++) {
             //adjustedScore = 9999999999999;
             highScoreKey = highScoreGameKey + (i + 1).ToString();
