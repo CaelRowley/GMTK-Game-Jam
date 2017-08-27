@@ -52,8 +52,7 @@ public class SpawnObstacle : MonoBehaviour {
 
         if (isAstroid)
         {
-            int spriteToSpawn = Random.Range(0, 2);
-            print(spriteToSpawn);
+            int spriteToSpawn = Random.Range(0, obsticles.Count);
             newObstacle = Instantiate(obsticles[spriteToSpawn], spawnPoint, randomRotation);
         }
         else {
