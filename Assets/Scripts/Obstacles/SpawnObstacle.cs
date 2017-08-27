@@ -11,10 +11,13 @@ public class SpawnObstacle : MonoBehaviour {
     public int numToSpawnMin;
     public int numToSpawnMax;
     public GameObject obstacle;
+    //public GameObject[] obsticles;
+    public List<GameObject> obsticles = new List<GameObject>();
     public GameObject playerObject;
     public int minScale;
     public int maxScale;
     public bool useRandomRotation;
+    public bool isAstroid = false;
 
     private float spawnTimer;
 
@@ -41,11 +44,22 @@ public class SpawnObstacle : MonoBehaviour {
         } else {
             randomRotation = transform.rotation;
         }
-
+        
         spawnTimer = Random.Range(spawnTimeMin, spawnTimeMax) / 10;
         float yPos = playerObject.transform.position.y - 50 + Random.Range(-25, 25);
         Vector3 spawnPoint = new Vector3(Random.Range(spawnPosXMin, spawnPosXMax), yPos, 0);
-        GameObject newObstacle = Instantiate(obstacle, spawnPoint, randomRotation);
+        GameObject newObstacle = null;
+
+        if (isAstroid)
+        {
+            int spriteToSpawn = Random.Range(0, 2);
+            print(spriteToSpawn);
+            newObstacle = Instantiate(obsticles[spriteToSpawn], spawnPoint, randomRotation);
+        }
+        else {
+            newObstacle = Instantiate(obstacle, spawnPoint, randomRotation);
+        }
+
         float newScale = Random.Range(minScale, maxScale) / 10;
         newObstacle.transform.localScale += new Vector3(newScale, newScale, 0);
     }
