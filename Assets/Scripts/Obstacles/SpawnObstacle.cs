@@ -11,7 +11,6 @@ public class SpawnObstacle : MonoBehaviour {
     public int numToSpawnMin;
     public int numToSpawnMax;
     public GameObject obstacle;
-    //public GameObject[] obsticles;
     public List<GameObject> obsticles = new List<GameObject>();
     public GameObject playerObject;
     public int minScale;
@@ -52,7 +51,7 @@ public class SpawnObstacle : MonoBehaviour {
 
         if (isAstroid)
         {
-            int spriteToSpawn = Random.Range(0, obsticles.Count);
+            int spriteToSpawn = Random.Range(0, 2);
             newObstacle = Instantiate(obsticles[spriteToSpawn], spawnPoint, randomRotation);
         }
         else {
