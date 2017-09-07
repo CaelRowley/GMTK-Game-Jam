@@ -190,26 +190,32 @@ GameObject:
   m_Component:
   - component: {fileID: 134110514}
   - component: {fileID: 134110515}
-  m_Layer: 0
+  - component: {fileID: 134110516}
+  m_Layer: 5
   m_Name: New Piskel (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &134110514
-Transform:
+--- !u!224 &134110514
+RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134110513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -261.26547, y: 465.2933, z: 0}
-  m_LocalScale: {x: 150.00003, y: 150.00002, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 150, y: 150, z: 1}
   m_Children: []
   m_Father: {fileID: 541748950}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40.8, y: -43.7}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0, y: 1}
 --- !u!212 &134110515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -252,6 +258,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!222 &134110516
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 134110513}
 --- !u!1 &143985944 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1579259789737610, guid: d2e0c221434166245acd5538c81a1435,
