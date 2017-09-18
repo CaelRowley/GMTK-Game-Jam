@@ -10,8 +10,7 @@ public class SpawnPickup : MonoBehaviour {
     public float spawnPosY;
     public bool spawnAsChild = false;
 
-
-    void Start () {
+    void Start() {
         Vector3 spawnPoint = new Vector3(attachedObject.transform.position.x + spawnPosX, attachedObject.transform.position.y + spawnPosY, attachedObject.transform.position.z);
         GameObject newPickup = Instantiate(pickup, spawnPoint, attachedObject.transform.rotation);
         if(spawnAsChild)

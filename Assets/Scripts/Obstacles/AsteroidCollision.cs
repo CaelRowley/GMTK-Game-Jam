@@ -13,14 +13,14 @@ public class AsteroidCollision : MonoBehaviour {
             playerStats.health -= collisionDamage;
             obstacleStats = gameObject.GetComponent<ObstacleStats>();
             obstacleStats.health -= collisionDamage;
-        } else if(collison.gameObject.tag.Equals("Obstacle")) {
-            obstacleStats = collison.gameObject.GetComponent<ObstacleStats>();
-            obstacleStats.health -= collisionDamage;
+        } else if(collison.gameObject.tag.Equals("Ship")) {
+            ShipController shipController = collison.gameObject.GetComponent<ShipController>();
+            shipController.health -= collisionDamage;
             obstacleStats = gameObject.GetComponent<ObstacleStats>();
             obstacleStats.health -= collisionDamage;
         } else if (collison.gameObject.tag.Equals("Follower") & !gameObject.tag.Equals("Follower")) {
-            obstacleStats = collison.gameObject.GetComponent<ObstacleStats>();
-            obstacleStats.health -= collisionDamage;
+            ShipController shipController = collison.gameObject.GetComponent<ShipController>();
+            shipController.health -= collisionDamage;
         }
     }
 }

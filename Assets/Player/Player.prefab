@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114536959364218790}
   - component: {fileID: 114287501340656254}
   - component: {fileID: 114619615511287866}
+  - component: {fileID: 114703795834933520}
   - component: {fileID: 50034379270103980}
   - component: {fileID: 61863597176746714}
   m_Layer: 0
@@ -455,7 +456,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  maxHealth: 8
   explosion: {fileID: 1909841699451952, guid: 720e24c47033f8a40bed1fe509fa6cff, type: 2}
+--- !u!114 &114703795834933520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579259789737610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2b202c9cc970541926faec5c01cf13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUps:
+  - {fileID: 1651664219279922, guid: 0cbf4239864667848b6dbb888ae3aa7c, type: 2}
+  activePowerUp: {fileID: 0}
+  nextPowerUp: {fileID: 0}
+  queuedPowerUps: []
 --- !u!114 &114791999169015514
 MonoBehaviour:
   m_ObjectHideFlags: 1
