@@ -15,6 +15,7 @@ TagManager:
   - Score
   - Canvas
   - LifeIcon
+  - Ship
   layers:
   - Default
   - TransparentFX
