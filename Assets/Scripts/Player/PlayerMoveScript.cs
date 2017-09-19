@@ -19,6 +19,19 @@ public class PlayerMoveScript : MonoBehaviour {
         //handleTiltInput();
         handleTouchScreen();
         moveWithKeys();
+        usePowerUp();
+    }
+
+    private void usePowerUp() {
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
+        {
+            Vector2 touchPosition = Input.GetTouch(0).position;
+
+            if (touchPosition.y < 250)
+            {
+
+            }
+        }
     }
 
     private void handleTouchScreen() {
