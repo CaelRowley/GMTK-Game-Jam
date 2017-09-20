@@ -13,6 +13,7 @@ public class ShipController : MonoBehaviour {
     public GameObject score;
     public GameObject powerUp;
     public bool HasPowerUp;
+    public int scoreLost = 10000;
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -50,20 +51,18 @@ public class ShipController : MonoBehaviour {
         if(collison.gameObject.tag.Equals("Player")) {
             PlayerStats playerStats = collison.gameObject.GetComponent<PlayerStats>();
             playerStats.health -= collisionDamage;
-            obstacleStats = gameObject.GetComponent<ObstacleStats>();
-            obstacleStats.health -= collisionDamage;
+            health -= collisionDamage;
             score = GameObject.FindGameObjectWithTag("Score");
-
             ScoreController scoreControl = score.GetComponent<ScoreController>();
-            scoreControl.score -= 10000;
+            scoreControl.score -= scoreLost;
         } else if(collison.gameObject.tag.Equals("Obstacle")) {
             obstacleStats = collison.gameObject.GetComponent<ObstacleStats>();
             obstacleStats.health -= collisionDamage;
-            ShipController shipController = gameObject.GetComponent<ShipController>();
-            shipController.health -= collisionDamage;
+            health -= collisionDamage;
         } else if(collison.gameObject.tag.Equals("Follower") & !gameObject.tag.Equals("Follower")) {
             ShipController shipController = collison.gameObject.GetComponent<ShipController>();
             shipController.health -= collisionDamage;
+            health -= collisionDamage;
         }
     }
 }

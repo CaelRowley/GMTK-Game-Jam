@@ -141,10 +141,12 @@ MonoBehaviour:
   explosion: {fileID: 1909841699451952, guid: 720e24c47033f8a40bed1fe509fa6cff, type: 2}
   invincible: 1
   player: {fileID: 0}
-  invincibilityOffset: -15
+  invincibilityOffset: -20
   collisionDamage: 1
   score: {fileID: 0}
-  shipType: Force Push Ship
+  powerUp: {fileID: 0}
+  HasPowerUp: 0
+  scoreLost: 10000
 --- !u!114 &114680579373724476
 MonoBehaviour:
   m_ObjectHideFlags: 1
