@@ -892,7 +892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -291}
+  m_AnchoredPosition: {x: -4, y: -321}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981012982
@@ -927,12 +927,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "In the not too distant future, in a Galaxy relatively nearby.\nHumanoids
-    developed slipstream highways connecting \ndifferent galaxies together. One such
-    slipstream highway has\nbecome plagued with debris and asteroids, it is your job
-    to \nrally up the autopilot ships protecting them from absolute \ndevastation
-    using your ships new revolutionary technology\n a slipstream emitter. \n\n\n\nTilt
-    left and right to control your ship\n\n"
+  m_Text: '
+
+
+    Press on the LEFT hand side of the screen
+
+    to MOVE left
+
+    Press on the RIGHT hand side of the screen
+
+    to MOVE right
+
+    Press on the ship to use Power-Ups
+
+
+
+'
 --- !u!222 &1981012983
 CanvasRenderer:
   m_ObjectHideFlags: 0

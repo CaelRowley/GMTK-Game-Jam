@@ -31,8 +31,6 @@ public class ScoreController : MonoBehaviour {
     private float bestScore;
     private string highScoreKey;
 
-
-
     void Start() {
         bestScore = 0.0f;
         for(int i = 0; i < bestScores.Length; i++) {
@@ -135,7 +133,7 @@ public class ScoreController : MonoBehaviour {
             score = score + scoreMultiplier * 10;
             multiplier.GetComponent<Text>().text = "x" + scoreMultiplier.ToString("0");
         } else {
-            //multiplier.GetComponent<Text>().text = "";
+            multiplier.GetComponent<Text>().text = "";
         }
     }
 
