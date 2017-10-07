@@ -31,8 +31,6 @@ public class ScoreController : MonoBehaviour {
     private float bestScore;
     private string highScoreKey;
 
-
-
     void Start() {
         bestScore = 0.0f;
         for(int i = 0; i < bestScores.Length; i++) {

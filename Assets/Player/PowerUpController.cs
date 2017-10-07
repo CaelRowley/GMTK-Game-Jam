@@ -37,9 +37,10 @@ public class PowerUpController : MonoBehaviour {
     }
 
 
-    void ActivatePowerUp() {
+    public void ActivatePowerUp() {
         Vector3 spawnPoint = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         GameObject newPowerUp = Instantiate(activePowerUp, spawnPoint, gameObject.transform.rotation);
-        //newPowerUp.transform.parent = gameObject.transform;
+        newPowerUp.transform.SetParent(gameObject.transform, true);
+        // remove powerup from list
     }
 }
