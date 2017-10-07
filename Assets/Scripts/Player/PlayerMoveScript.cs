@@ -29,7 +29,7 @@ public class PlayerMoveScript : MonoBehaviour {
 
             if (touchPosition.y < 250)
             {
-
+                // get powerup component then use powerup function
             }
         }
     }
