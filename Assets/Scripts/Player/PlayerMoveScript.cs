@@ -8,8 +8,10 @@ public class PlayerMoveScript : MonoBehaviour {
     public float speed;
     public Transform target;
     public float boundsLimit;
+    private GameObject test;
 
     void Start() {
+        test = GameObject.FindGameObjectWithTag("Multiplier");
     }
 
     void FixedUpdate() {
@@ -23,13 +25,13 @@ public class PlayerMoveScript : MonoBehaviour {
     }
 
     private void usePowerUp() {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            Vector2 touchPosition = Input.GetTouch(0).position;
-
-            if (touchPosition.y < 250)
+            Vector2 touchPosition = Input.GetTouch(0).position; 
+            test.GetComponent<Text>().text = Input.GetTouch(0).position.ToString();
+            if (touchPosition.y > 900.0F)
             {
-                // get powerup component then use powerup function
+                gameObject.GetComponent<PowerUpController>().ActivatePowerUp();
             }
         }
     }
@@ -39,13 +41,13 @@ public class PlayerMoveScript : MonoBehaviour {
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
 
-            if (touchPosition.x < 335.0f) {
+            if (touchPosition.x < 335.0f && touchPosition.y < 900.0F) {
                 Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
                 transform.Rotate(rotation * Time.deltaTime);
-
-            }else if(touchPosition.x > 335.0f){
+            }
+            else if(touchPosition.x > 335.0f && touchPosition.y < 900.0F) {
                 Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
-                transform.Rotate(rotation * Time.deltaTime);
+                transform.Rotate(rotation * Time.deltaTime); 
             }
         }
     }
