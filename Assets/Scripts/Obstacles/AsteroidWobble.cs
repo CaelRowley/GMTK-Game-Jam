@@ -12,7 +12,7 @@ public class AsteroidWobble : MonoBehaviour {
         targetPosition = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + Random.Range(-10, 10), transform.position.z);
     }
     private void Update() {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+        //float step = speed * Time.deltaTime;
+        //transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
     }
 }

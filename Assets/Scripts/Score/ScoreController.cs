@@ -133,7 +133,7 @@ public class ScoreController : MonoBehaviour {
             score = score + scoreMultiplier * 10;
             multiplier.GetComponent<Text>().text = "x" + scoreMultiplier.ToString("0");
         } else {
-            multiplier.GetComponent<Text>().text = "";
+            //multiplier.GetComponent<Text>().text = "";
         }
     }
 
