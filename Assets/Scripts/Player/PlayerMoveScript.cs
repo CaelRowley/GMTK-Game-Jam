@@ -9,7 +9,10 @@ public class PlayerMoveScript : MonoBehaviour {
     public Transform target;
     public float boundsLimit;
 
+    private GameObject multiplier;
+
     void Start() {
+        multiplier = GameObject.FindGameObjectWithTag("Multiplier");
     }
 
     void FixedUpdate() {
@@ -25,7 +28,8 @@ public class PlayerMoveScript : MonoBehaviour {
     private void usePowerUp() {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            Vector2 touchPosition = Input.GetTouch(0).position; 
+            Vector2 touchPosition = Input.GetTouch(0).position;
+            multiplier.GetComponent<Text>().text = touchPosition.ToString("0");
             if (touchPosition.y > 900.0F)
             {
                 gameObject.GetComponent<PowerUpController>().ActivatePowerUp();
