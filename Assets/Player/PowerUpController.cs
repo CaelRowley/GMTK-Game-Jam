@@ -15,7 +15,7 @@ public class PowerUpController : MonoBehaviour {
 
 
     void OnTriggerStay2D(Collider2D collider) {
-        if(collider.gameObject.tag.Equals("Follower") && queuedPowerUps.Count < 2) {
+        if (collider.gameObject.tag.Equals("Follower") && queuedPowerUps.Count < 2) {
             //print("PowerUp sent");
             ShipController shipController = collider.gameObject.GetComponent<ShipController>();
             if(shipController.CheckPowerUp()) {
@@ -27,15 +27,9 @@ public class PowerUpController : MonoBehaviour {
 
 
     void SendPowerUpToPlayer() {
-        activePowerUp = queuedPowerUps[0];
-        Debug.Log(activePowerUp);
-        Debug.Log(queuedPowerUps.Count);
-        //if(queuedPowerUps[0])
-        //    activePowerUp = queuedPowerUps[0];
-        //if(queuedPowerUps[1])
-        //    nextPowerUp = queuedPowerUps[1];
-
-        //ActivatePowerUp();
+        if (queuedPowerUps.Count < 2) {
+            nextPowerUp = queuedPowerUps[0];
+        }
     }
 
 
@@ -47,9 +41,19 @@ public class PowerUpController : MonoBehaviour {
             // add rotation to this instantiate
 
             GameObject newPowerUp = Instantiate(activePowerUp, spawnPoint, gameObject.transform.rotation);
+            
+            //Debug.Log(activePowerUp.name);
+            if (activePowerUp.name == "Forcefield") {
+                newPowerUp.transform.SetParent(gameObject.transform, true);
+            }
+            queuedPowerUps.Remove(activePowerUp);
+            activePowerUp = null;
             //newPowerUp.transform.SetParent(gameObject.transform, true);
         }
-        
+        if (nextPowerUp != null) {
+            activePowerUp = nextPowerUp;
+            nextPowerUp = null;
+        }
         // remove powerup from list
     }
 }
