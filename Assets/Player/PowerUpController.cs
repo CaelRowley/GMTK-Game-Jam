@@ -28,6 +28,8 @@ public class PowerUpController : MonoBehaviour {
 
     void SendPowerUpToPlayer() {
         activePowerUp = queuedPowerUps[0];
+        Debug.Log(activePowerUp);
+        Debug.Log(queuedPowerUps.Count);
         //if(queuedPowerUps[0])
         //    activePowerUp = queuedPowerUps[0];
         //if(queuedPowerUps[1])
