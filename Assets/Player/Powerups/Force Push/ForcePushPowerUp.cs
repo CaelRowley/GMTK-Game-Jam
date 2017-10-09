@@ -19,7 +19,7 @@ public class ForcePushPowerUp : MonoBehaviour {
         float step = speed * Time.deltaTime;
         transform.Translate(Vector3.down * step);
 
-        if (player.transform.position.y - transform.position.y > 2.0f){
+        if (player.transform.position.y - transform.position.y > 8.0f){
             
 
             Vector2 explosionPos = transform.position;
@@ -27,7 +27,7 @@ public class ForcePushPowerUp : MonoBehaviour {
             foreach (Collider2D hit in colliders)
             {
                 Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
-                Debug.Log(hit);
+                //Debug.Log(hit);
                 if (rb != null) {
                     Vector3 direction = hit.transform.position - transform.position;
                     direction = direction.normalized;
