@@ -9,10 +9,10 @@ public class PlayerMoveScript : MonoBehaviour {
     public Transform target;
     public float boundsLimit;
 
-    private GameObject multiplier;
+    //private GameObject multiplier;
 
     void Start() {
-        multiplier = GameObject.FindGameObjectWithTag("Multiplier");
+        //multiplier = GameObject.FindGameObjectWithTag("Multiplier");
     }
 
     void FixedUpdate() {
@@ -29,8 +29,8 @@ public class PlayerMoveScript : MonoBehaviour {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
-            multiplier.GetComponent<Text>().text = touchPosition.ToString("0");
-            if (touchPosition.y > 900.0F)
+            //multiplier.GetComponent<Text>().text = touchPosition.ToString("0");
+            if ((touchPosition.y < (Screen.height*.30)) && (touchPosition.x > (Screen.width*.40)) && (touchPosition.x < (Screen.width * .60)))
             {
                 gameObject.GetComponent<PowerUpController>().ActivatePowerUp();
             }
@@ -42,11 +42,11 @@ public class PlayerMoveScript : MonoBehaviour {
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
 
-            if (touchPosition.x < 335.0f && touchPosition.y < 900.0F) {
+            if (touchPosition.x < (Screen.width * .40)) {
                 Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
                 transform.Rotate(rotation * Time.deltaTime);
             }
-            else if(touchPosition.x > 335.0f && touchPosition.y < 900.0F) {
+            else if(touchPosition.x > (Screen.width * .60)) {
                 Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
                 transform.Rotate(rotation * Time.deltaTime); 
             }

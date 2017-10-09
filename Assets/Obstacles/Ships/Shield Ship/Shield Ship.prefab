@@ -156,7 +156,7 @@ MonoBehaviour:
   invincibilityOffset: -20
   collisionDamage: 1
   score: {fileID: 0}
-  powerUp: {fileID: 1040980452459800, guid: 5c315fa774e1a67469ac0a477aef4624, type: 2}
+  powerUp: {fileID: 1352772349210652, guid: 98da3402dc01b0b408e9b20a6040ea1d, type: 2}
   HasPowerUp: 1
   scoreLost: 10000
 --- !u!212 &212877842805130700
