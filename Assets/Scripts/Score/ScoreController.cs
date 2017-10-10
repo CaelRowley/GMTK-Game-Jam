@@ -24,7 +24,7 @@ public class ScoreController : MonoBehaviour {
     public bool bestScoreHigh;
 
     private Transform firstLifeTransform;
-    private float firstLifeZ;
+    //private float firstLifeZ;
 
     private int currentScore;
     private float[] bestScores = new float[5];
@@ -59,7 +59,7 @@ public class ScoreController : MonoBehaviour {
 
     void createLifeUI(int life) {
         if(lives.Count == 0) {
-            Vector3 newPosition = new Vector3(lifeIcon.transform.position.x - 2.0f, lifeIcon.transform.position.y, firstLifeZ);
+            Vector3 newPosition = new Vector3(lifeIcon.transform.position.x - 2.0f, lifeIcon.transform.position.y, 0);
             GameObject newLife = Instantiate(lifeIcon, newPosition, lifeIcon.transform.rotation, gameCanvas.transform);
             lives.Add(newLife);
         } else if(lives.Count < 8) {
@@ -133,7 +133,7 @@ public class ScoreController : MonoBehaviour {
             score = score + scoreMultiplier * 10;
             multiplier.GetComponent<Text>().text = "x" + scoreMultiplier.ToString("0");
         } else {
-            //multiplier.GetComponent<Text>().text = "";
+            multiplier.GetComponent<Text>().text = "";
         }
     }
 

@@ -5675,8 +5675,7 @@ Prefab:
         type: 2}
       propertyPath: activePowerUp
       value: 
-      objectReference: {fileID: 1040980452459800, guid: 5c315fa774e1a67469ac0a477aef4624,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 50034379270103980, guid: d2e0c221434166245acd5538c81a1435,
         type: 2}
       propertyPath: m_BodyType
