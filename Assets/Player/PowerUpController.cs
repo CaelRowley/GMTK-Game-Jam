@@ -16,7 +16,6 @@ public class PowerUpController : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D collider) {
         if (collider.gameObject.tag.Equals("Follower") && queuedPowerUps.Count < 2) {
-            //print("PowerUp sent");
             ShipController shipController = collider.gameObject.GetComponent<ShipController>();
             if(shipController.CheckPowerUp()) {
                 queuedPowerUps.Add(shipController.GetPowerUp());
@@ -55,5 +54,10 @@ public class PowerUpController : MonoBehaviour {
             nextPowerUp = null;
         }
         // remove powerup from list
+    }
+
+    public List<GameObject> ReturnPowerUps()
+    {
+        return queuedPowerUps;
     }
 }
