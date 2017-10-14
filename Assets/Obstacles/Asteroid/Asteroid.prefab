@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4970163559266556}
   - component: {fileID: 212262958074625174}
-  - component: {fileID: 61769850222440830}
   - component: {fileID: 114425545659390222}
   - component: {fileID: 114533467249371974}
   - component: {fileID: 114383445527923368}
   - component: {fileID: 50890103537255174}
+  - component: {fileID: 68412367073559098}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Obstacle
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856835554962374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.706598, y: -0.36035672, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61769850222440830
-BoxCollider2D:
+--- !u!68 &68412367073559098
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,19 +77,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0069333203, y: 0.009013295}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2201604, y: 0.2132271}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.53417313, y: -0.009520352}
+  - {x: 0.157637, y: -0.16819243}
+  - {x: 0.0007945299, y: -0.54665345}
+  - {x: -0.14359796, y: -0.16591217}
+  - {x: -0.54780173, y: -0.011936605}
+  - {x: -0.1493696, y: 0.13930292}
+  - {x: -0.0014220476, y: 0.53483117}
+  - {x: 0.14494324, y: 0.1396313}
+  - {x: 0.5384499, y: -0.009520277}
 --- !u!114 &114383445527923368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4414130db1c2c334ea7d3dc3587cb906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionDamage: 1
+  collisionDamage: 0
 --- !u!114 &114533467249371974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4032246b7d9e645830d1046e988ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 100000000
   explosion: {fileID: 1909841699451952, guid: 720e24c47033f8a40bed1fe509fa6cff, type: 2}
   invincible: 1
   player: {fileID: 0}
@@ -162,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f46bd2a9105e53c4fbfa4356f8040483, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dcd8869ca2c5a2d41a62adb72ec34fb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -22,7 +22,9 @@ public class MakeSlipstreamWaypoints : MonoBehaviour {
 
     private void SpawnWaypoint() {
         spawnTimer = spawnTime;
-        Transform newWaypoint = Instantiate(waypointObject, playerObject.transform.position, playerObject.transform.rotation) as Transform;
+
+        Vector3 wayPointPos = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y+1, playerObject.transform.position.z);
+        Transform newWaypoint = Instantiate(waypointObject, wayPointPos, playerObject.transform.rotation) as Transform;
         UpdateFollowerWaypoints(newWaypoint);
     }
 
