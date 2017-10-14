@@ -389,6 +389,8 @@ MonoBehaviour:
   powerUp: {fileID: 1352772349210652, guid: 98da3402dc01b0b408e9b20a6040ea1d, type: 2}
   HasPowerUp: 1
   scoreLost: 10000
+  collectionAnimation: {fileID: 1437275396181584, guid: ce4ce24502897194397545ffc6b41318,
+    type: 2}
 --- !u!212 &212877842805130700
 SpriteRenderer:
   m_ObjectHideFlags: 1

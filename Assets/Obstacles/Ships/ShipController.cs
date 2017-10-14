@@ -14,6 +14,7 @@ public class ShipController : MonoBehaviour {
     public GameObject powerUp;
     public bool HasPowerUp;
     public int scoreLost = 10000;
+    public GameObject collectionAnimation;
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,6 +34,11 @@ public class ShipController : MonoBehaviour {
             invincible = false;
         }
     }
+
+    internal GameObject getCollectionAnimation() {
+        return collectionAnimation;
+    }
+
 
     public bool CheckPowerUp() {
         if(HasPowerUp) {
