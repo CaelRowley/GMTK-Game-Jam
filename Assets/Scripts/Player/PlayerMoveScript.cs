@@ -63,7 +63,7 @@ public class PlayerMoveScript : MonoBehaviour {
             Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
             transform.Rotate(rotation * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.GetComponent<PowerUpController>().ActivatePowerUp();
         }
