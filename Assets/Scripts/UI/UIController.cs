@@ -33,12 +33,12 @@ public class UIController : MonoBehaviour {
         queuedPowerUps = player.GetComponent<PowerUpController>().queuedPowerUps;
         if (queuedPowerUps.Count == 1)
         {
-            spawnPoint = new Vector3(scoreIcon.transform.position.x, scoreIcon.transform.position.y - 1);
+            spawnPoint = new Vector3(scoreIcon.transform.position.x, scoreIcon.transform.position.y - 1.50f);
             powerUpChecker(queuedPowerUps[0], spawnPoint);
         }
         if (queuedPowerUps.Count == 2)
         {
-            spawnPoint = new Vector3(scoreIcon.transform.position.x, scoreIcon.transform.position.y - 1.50f);
+            spawnPoint = new Vector3(scoreIcon.transform.position.x, scoreIcon.transform.position.y - 1);
             powerUpChecker(queuedPowerUps[1], spawnPoint);
         }
     }
