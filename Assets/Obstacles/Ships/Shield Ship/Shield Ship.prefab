@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 114208291758868478}
   - component: {fileID: 114517571400856654}
   - component: {fileID: 50032812022509052}
-  - component: {fileID: 61432668422322220}
   - component: {fileID: 95433328140948636}
   - component: {fileID: 114685454280346630}
+  - component: {fileID: 60158976653069748}
   m_Layer: 0
   m_Name: Shield Ship
   m_TagString: Ship
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111830280867648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0.085, y: 0.27, z: 0}
   m_LocalScale: {x: 1.2074405, y: 1.2074406, z: 1.2074345}
   m_Children: []
   m_Father: {fileID: 4901617435443314}
@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374677350908062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0.45, z: 0}
+  m_LocalPosition: {x: -0.085, y: 0.27, z: 0}
   m_LocalScale: {x: 1.2074405, y: 1.2074406, z: 1.2074345}
   m_Children: []
   m_Father: {fileID: 4901617435443314}
@@ -98,8 +98,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1782679946334712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.85, y: -15.6471615, z: 0}
-  m_LocalScale: {x: 1.6039382, y: 1.603938, z: 0.534646}
+  m_LocalPosition: {x: 8.013, y: -15.6471615, z: 0}
+  m_LocalScale: {x: 2.698701, y: 2.6986997, z: 0.89956653}
   m_Children:
   - {fileID: 4043515158776128}
   - {fileID: 4413933222437460}
@@ -126,8 +126,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61432668422322220
-BoxCollider2D:
+--- !u!60 &60158976653069748
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -142,15 +142,24 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 0.65, y: 0.65}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.7}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.17750521, y: -0.10690009}
+      - {x: 0.26049608, y: -0.0049095484}
+      - {x: 0.27107036, y: 0.21056885}
+      - {x: 0.17761193, y: 0.2611305}
+      - {x: -0.17665869, y: 0.2653015}
+      - {x: -0.27034822, y: 0.21062787}
+      - {x: -0.2581498, y: -0.0019863653}
+      - {x: -0.17851801, y: -0.10712484}
+      - {x: -0.10701048, y: -0.31057832}
+      - {x: 0.11415288, y: -0.31129003}
 --- !u!95 &95433328140948636
 Animator:
   serializedVersion: 3
@@ -423,7 +432,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f543da8b050ac32418e101a5caeefd1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf6fe13643b73f54da04bcc43ca5635b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

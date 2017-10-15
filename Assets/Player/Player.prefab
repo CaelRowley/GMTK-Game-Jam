@@ -57,8 +57,8 @@ GameObject:
   - component: {fileID: 114619615511287866}
   - component: {fileID: 114703795834933520}
   - component: {fileID: 50034379270103980}
-  - component: {fileID: 61863597176746714}
   - component: {fileID: 61806113165298260}
+  - component: {fileID: 60776482258566382}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665538029343552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.135, y: 0.3, z: 0}
+  m_LocalPosition: {x: -0.08, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4894233259825096}
@@ -131,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 1579259789737610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.009, z: -1.08}
-  m_LocalScale: {x: 1.9366577, y: 1.9366611, z: 0.6455537}
+  m_LocalScale: {x: 2.9711466, y: 2.971152, z: 0.99038404}
   m_Children:
   - {fileID: 4584583040978550}
   - {fileID: 4894233259825096}
@@ -160,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085753194189362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.135, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0.08, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4894233259825096}
@@ -186,6 +186,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &60776482258566382
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579259789737610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.65, y: 0.65}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.111660495, y: 0.29946852}
+      - {x: 0.00016163079, y: 0.23555364}
+      - {x: -0.111644045, y: 0.29891467}
+      - {x: -0.23764691, y: 0.2698597}
+      - {x: -0.20392616, y: 0.16974798}
+      - {x: -0.13955896, y: 0.14332534}
+      - {x: 0.0006946966, y: -0.29707476}
+      - {x: 0.14491262, y: 0.14329554}
+      - {x: 0.20311832, y: 0.16687384}
+      - {x: 0.23983596, y: 0.2703625}
 --- !u!61 &61806113165298260
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -198,43 +232,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
+  m_Offset: {x: 0, y: 1.4701912}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 0.65, y: 0.65}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 3}
-  m_EdgeRadius: 0
---- !u!61 &61863597176746714
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1579259789737610}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.6}
+  m_Size: {x: 0.7, y: 2.0596175}
   m_EdgeRadius: 0
 --- !u!95 &95488304729053438
 Animator:
@@ -289,7 +298,7 @@ TrailRenderer:
   m_Time: 5
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.08
+    widthMultiplier: 0.12
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -374,7 +383,7 @@ TrailRenderer:
   m_Time: 5
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.08
+    widthMultiplier: 0.12
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -476,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5decb4366b806884d8fb2543a03eb764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 0.1
+  spawnTime: 0.15
   waypointObject: {fileID: 4455204873633576, guid: ad698724cc01d8a41991b7eb754367c7,
     type: 2}
   playerObject: {fileID: 1579259789737610}
@@ -512,7 +521,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 591663e80d35d604282fc9b253bccd4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2de7ead6c64282c40835bea999d5ce47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
