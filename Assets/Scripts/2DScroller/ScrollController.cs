@@ -30,7 +30,7 @@ public class ScrollController : MonoBehaviour{
             }
         }
         else {
-            if (startPosition.y - player.transform.position.y > 45.0f) {
+            if (startPosition.y - player.transform.position.y > 100.0f) {
                 Destroy(gameObject);
             }
         }

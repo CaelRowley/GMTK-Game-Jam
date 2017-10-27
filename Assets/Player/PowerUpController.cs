@@ -45,10 +45,6 @@ public class PowerUpController : MonoBehaviour {
         if (activePowerUp != null) {
             Vector3 spawnPoint = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
             GameObject newPowerUp = Instantiate(activePowerUp, spawnPoint, gameObject.transform.rotation);
-
-            if (activePowerUp.name == "Forcefield") {
-                newPowerUp.transform.SetParent(gameObject.transform, true);
-            }
             queuedPowerUps.Remove(activePowerUp);
             UIController.removeUIIcon();
             activePowerUp = null;

@@ -24,9 +24,7 @@ GameObject:
   - component: {fileID: 114533467249371974}
   - component: {fileID: 114383445527923368}
   - component: {fileID: 50890103537255174}
-  - component: {fileID: 61769850222440830}
-  - component: {fileID: 61423361190801186}
-  - component: {fileID: 58691427062740406}
+  - component: {fileID: 60084731172628172}
   m_Layer: 0
   m_Name: Asteroid-2
   m_TagString: Obstacle
@@ -41,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856835554962374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.241386, y: -0.7700989, z: 0}
+  m_LocalPosition: {x: -13.775508, y: -1265.8887, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58691427062740406
-CircleCollider2D:
+--- !u!60 &60084731172628172
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -79,22 +77,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.01}
-  serializedVersion: 2
-  m_Radius: 0.24
---- !u!61 &61423361190801186
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856835554962374}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.01}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -104,34 +87,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.15}
-  m_EdgeRadius: 0
---- !u!61 &61769850222440830
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856835554962374}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.01}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.54667187, y: -0.013671875}
+      - {x: 0.1613369, y: 0.15435791}
+      - {x: 0.0026597977, y: 0.5443115}
+      - {x: -0.1563592, y: 0.1586914}
+      - {x: -0.55133724, y: -0.00970459}
+      - {x: -0.15404081, y: -0.17059326}
+      - {x: -0.004339218, y: -0.5513916}
+      - {x: 0.16199112, y: -0.17071533}
 --- !u!114 &114383445527923368
 MonoBehaviour:
   m_ObjectHideFlags: 1
