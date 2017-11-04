@@ -312,6 +312,7 @@ MonoBehaviour:
   scoreLost: 10000
   collectionAnimation: {fileID: 1028704366651714, guid: 436cf9a270bf78142964925ea4d4c54c,
     type: 2}
+  explosionStartSize: 3.5
 --- !u!212 &212343115365498774
 SpriteRenderer:
   m_ObjectHideFlags: 1

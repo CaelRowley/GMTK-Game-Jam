@@ -19,7 +19,7 @@ public class BackgroundMusic : MonoBehaviour {
          audioSources[i] = child.AddComponent<AudioSource>();
          audioSources[i].volume = volume;
       }
-      nextLoopTime = AudioSettings.dspTime + 1.0f;
+      nextLoopTime = AudioSettings.dspTime;
    }
 
    // Plays audio clip after the loop time and switches the index for the next audio clip
