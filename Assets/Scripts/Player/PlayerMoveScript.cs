@@ -57,10 +57,17 @@ public class PlayerMoveScript : MonoBehaviour {
     {
         if (Input.GetKey("a")){
             Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
+            Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y + 50.0f, 0.0f);
+
+            transform.Rotate(rotationY * Time.deltaTime);
             transform.Rotate(rotation * Time.deltaTime);
         }
         if (Input.GetKey("d")){
             Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
+            Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y - 50.0f, 0.0f);
+
+            transform.Rotate(rotationY * Time.deltaTime);
+
             transform.Rotate(rotation * Time.deltaTime);
         }
         if (Input.GetKeyDown(KeyCode.Space))
