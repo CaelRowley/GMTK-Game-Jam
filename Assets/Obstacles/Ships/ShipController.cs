@@ -15,6 +15,7 @@ public class ShipController : MonoBehaviour {
     public bool HasPowerUp;
     public int scoreLost = 10000;
     public GameObject collectionAnimation;
+    public float explosionStartSize;
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -26,6 +27,7 @@ public class ShipController : MonoBehaviour {
                 health = 1;
             else {
                 GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
+                newExplosion.GetComponent<ParticleSystem>().startSize = explosionStartSize;
                 Destroy(gameObject);
             }
         }
@@ -54,7 +56,7 @@ public class ShipController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collison) {
         ObstacleStats obstacleStats;
-        if(collison.gameObject.tag.Equals("Player")) {
+        if(collison.gameObject.tag.Equals("Player") & !gameObject.tag.Equals("Follower")) {
             Debug.Log("hurt player");
             PlayerStats playerStats = collison.gameObject.GetComponent<PlayerStats>();
             playerStats.health -= collisionDamage;

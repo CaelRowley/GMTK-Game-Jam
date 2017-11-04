@@ -55,7 +55,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b88be7008e661d9408be2b09239ce8f7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.202
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2ab18d9685fd9bb4181f643d0008698e, type: 3}
   - {fileID: 8300000, guid: 0d3f96ac3d0d9ac4aab95222f2b22b2f, type: 3}
   - {fileID: 8300000, guid: 348af46ef1bbee74dbd588d0449c90f0, type: 3}
-  volume: 0.4
+  volume: 0.05
 --- !u!198 &198045274490900648
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -341,8 +341,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 4
+      minMaxState: 0
+      scalar: 3
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -370,7 +370,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -411,7 +411,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -561,7 +561,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    randomizeRotationDirection: 0
+    randomizeRotationDirection: 1
     maxNumParticles: 1
     size3D: 0
     rotation3D: 0

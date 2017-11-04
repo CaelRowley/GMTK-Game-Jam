@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998bcbb2a67470a43ba77484ebc78281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationEnd: {fileID: 1487121776825856, guid: def0b5de8bd27a749ab020273cbd42cd,
+    type: 2}
   radius: 7
   power: 50
 --- !u!212 &212270310818549510
