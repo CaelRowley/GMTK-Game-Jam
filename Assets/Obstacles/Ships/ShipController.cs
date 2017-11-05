@@ -55,7 +55,6 @@ public class ShipController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collison) {
         ObstacleStats obstacleStats;
         if(collison.gameObject.tag.Equals("Player")) {
-            Debug.Log("hurt player");
             PlayerStats playerStats = collison.gameObject.GetComponent<PlayerStats>();
             playerStats.health -= collisionDamage;
             health -= collisionDamage;

@@ -8,21 +8,27 @@ public class PlayerMoveScript : MonoBehaviour {
     public float speed;
     public Transform target;
     public float boundsLimit;
+    Transform spriteRotation;
+    Transform spriteRotationOrg;
+    bool canRotateBack = true;
 
     //private GameObject multiplier;
 
     void Start() {
         //multiplier = GameObject.FindGameObjectWithTag("Multiplier");
+        spriteRotation = gameObject.transform.GetChild(2);
     }
 
     void FixedUpdate() {
         keepPlayerInBounds();
         playerCanNeverMoveBackwards();
         playerMoveFoward();
+
         //handleTiltInput();
         handleTouchScreen();
         moveWithKeys();
         usePowerUp();
+        playerAlwaysRotatesLevel();
     }
 
     private void usePowerUp() {
@@ -45,36 +51,75 @@ public class PlayerMoveScript : MonoBehaviour {
             if (touchPosition.x < (Screen.width * .40)) {
                 Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
                 transform.Rotate(rotation * Time.deltaTime);
+                tiltPlayerSprite("left");
             }
             else if(touchPosition.x > (Screen.width * .60)) {
                 Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
-                transform.Rotate(rotation * Time.deltaTime); 
+                transform.Rotate(rotation * Time.deltaTime);
+                tiltPlayerSprite("right");
             }
         }
     }
 
     private void moveWithKeys()
     {
-        if (Input.GetKey("a")){
+        if (Input.GetKey("a"))
+        {
             Vector3 rotation = new Vector3(0.0f, 0.0f, -135.0f);
-            //Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y + 50.0f, 0.0f);
-
-            //transform.Rotate(rotationY * Time.deltaTime);
             transform.Rotate(rotation * Time.deltaTime);
+            tiltPlayerSprite("left");
         }
-        if (Input.GetKey("d")){
+
+        else if (Input.GetKey("d")){
             Vector3 rotation = new Vector3(0.0f, 0.0f, 135.0f);
-            //Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y - 50.0f, 0.0f);
-
-            //transform.Rotate(rotationY * Time.deltaTime);
-
             transform.Rotate(rotation * Time.deltaTime);
+            tiltPlayerSprite("right");
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.GetComponent<PowerUpController>().ActivatePowerUp();
         }
+    }
 
+    public void playerAlwaysRotatesLevel() {
+        if (spriteRotation.rotation != gameObject.transform.rotation && canRotateBack)
+        {
+            spriteRotation.rotation = Quaternion.RotateTowards(spriteRotation.rotation, gameObject.transform.rotation, 10 * Time.deltaTime);
+        }
+    }
+
+    public void tiltPlayerSprite(String direction){
+        if (direction == "left")
+        {
+            canRotateBack = true;
+            if (spriteRotation.rotation.eulerAngles.y < 7 || spriteRotation.rotation.eulerAngles.y > 353)
+            {
+                Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y + 500.0f, 0.0f);
+                spriteRotation.Rotate(rotationY * Time.deltaTime);
+            }
+        }
+        else if (direction == "right")
+        {
+            canRotateBack = true;
+            if (spriteRotation.rotation.eulerAngles.y > 353 || spriteRotation.rotation.eulerAngles.y < 7)
+            {
+                Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y - 500.0f, 0.0f);
+                spriteRotation.Rotate(rotationY * Time.deltaTime);
+            }
+        }
+        playerStopsRotating();
+    }
+
+    void playerStopsRotating() {
+        if (spriteRotation.rotation.eulerAngles.y >= 352)
+        {
+            canRotateBack = false;
+        }
+        if (spriteRotation.rotation.eulerAngles.y <= 10)
+        {
+            canRotateBack = false;
+        }
     }
 
     void playerMoveFoward() {
@@ -101,16 +146,19 @@ public class PlayerMoveScript : MonoBehaviour {
             transform.rotation = rotationBack;
         }
     }
+
     void keepPlayerInBounds() {
         if (transform.position.x < -boundsLimit)
         {
             Quaternion rotationBackTo0Left = Quaternion.Euler(new Vector3(0.0f, 0.0f, 10.0f));
+            spriteRotation.rotation = transform.rotation;
             transform.rotation = rotationBackTo0Left;
 
         }
         else if (transform.position.x > boundsLimit)
         {
             Quaternion rotationBackTo0Right = Quaternion.Euler(new Vector3(0.0f, 0.0f, 350.0f));
+            spriteRotation.rotation = transform.rotation;
             transform.rotation = rotationBackTo0Right;
         }
     }

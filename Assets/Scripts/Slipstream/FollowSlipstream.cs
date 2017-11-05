@@ -61,6 +61,7 @@ public class FollowSlipstream : MonoBehaviour {
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             xform.rotation = player.transform.rotation;
+            transform.Find("SpriteRotation").rotation = player.transform.GetChild(2).rotation;
         }
 
         if (waypoints.Count > 0)
