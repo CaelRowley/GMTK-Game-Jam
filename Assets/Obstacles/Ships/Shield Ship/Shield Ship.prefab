@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4276621182586040}
-  - component: {fileID: 212232851981340128}
+  - component: {fileID: 212549287884555326}
   m_Layer: 0
   m_Name: SpriteRotation
   m_TagString: Untagged
@@ -67,7 +67,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4901617435443314}
-  - component: {fileID: 212877842805130700}
   - component: {fileID: 114208291758868478}
   - component: {fileID: 114517571400856654}
   - component: {fileID: 50032812022509052}
@@ -430,6 +429,8 @@ MonoBehaviour:
   scoreLost: 10000
   collectionAnimation: {fileID: 1437275396181584, guid: ce4ce24502897194397545ffc6b41318,
     type: 2}
+  explosionStartSize: 0
+--- !u!212 &212549287884555326
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -466,10 +467,8 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 0.65, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  explosionStartSize: 3
-
