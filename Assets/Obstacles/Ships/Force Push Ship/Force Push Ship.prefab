@@ -529,6 +529,7 @@ MonoBehaviour:
   scoreLost: 10000
   collectionAnimation: {fileID: 1354322809745808, guid: b614678d7417e454794f971d7b4bb1af,
     type: 2}
+  explosionStartSize: 3.5
 --- !u!114 &114680579373724476
 MonoBehaviour:
   m_ObjectHideFlags: 1

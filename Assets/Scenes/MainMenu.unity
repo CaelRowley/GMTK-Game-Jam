@@ -846,7 +846,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: f5e36f3f4bdfeef42a086d75caf8d936, type: 3}
   - {fileID: 8300000, guid: f5e36f3f4bdfeef42a086d75caf8d936, type: 3}
-  volume: 1
+  volume: 0.2
 --- !u!4 &1912144662
 Transform:
   m_ObjectHideFlags: 0

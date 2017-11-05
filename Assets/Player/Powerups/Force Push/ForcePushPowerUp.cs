@@ -5,7 +5,9 @@ using UnityEngine;
 public class ForcePushPowerUp : MonoBehaviour {
     // Use this for initialization
     private GameObject player;
-    
+
+    public float distance = 5.0f;
+    public GameObject animationEnd;
     public float radius = 5.0F;
     public float power = 50.0F;
 
@@ -19,7 +21,7 @@ public class ForcePushPowerUp : MonoBehaviour {
         float step = speed * Time.deltaTime;
         transform.Translate(Vector3.down * step);
 
-        if (player.transform.position.y - transform.position.y > 8.0f){
+        if (player.transform.position.y - transform.position.y > distance) {
             Vector2 explosionPos = transform.position;
             Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPos, radius);
             foreach (Collider2D hit in colliders)
@@ -31,6 +33,7 @@ public class ForcePushPowerUp : MonoBehaviour {
                     rb.AddForce((direction * 8.0f), ForceMode2D.Impulse);
                 }
             }
+            GameObject ActiveAnimation = Instantiate(animationEnd, gameObject.transform.position, animationEnd.transform.rotation);
             Destroy(gameObject);
         }
 
