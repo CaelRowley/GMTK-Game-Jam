@@ -24,18 +24,20 @@ public class PowerUpController : MonoBehaviour {
                 GameObject ActiveCollectionAnimation = Instantiate(collectionAnimation, gameObject.transform.position, collectionAnimation.transform.rotation);
                 ActiveCollectionAnimation.transform.SetParent(gameObject.transform, true);
                 SendPowerUpToPlayer();
-                UIController.createUIIcon();
+                UIController.createUIIcon(queuedPowerUps);
             }
         }
     }
 
     void SendPowerUpToPlayer() {
 
-        if (queuedPowerUps.Count == 1) {
+        if (queuedPowerUps.Count == 1)
+        {
             activePowerUp = queuedPowerUps[0];
         }
-                
-        else if (queuedPowerUps.Count == 2) {
+
+        else if (queuedPowerUps.Count == 2)
+        {
             nextPowerUp = queuedPowerUps[1];
         }
     }

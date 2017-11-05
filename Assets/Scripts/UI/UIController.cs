@@ -29,8 +29,9 @@ public class UIController : MonoBehaviour {
         canvas = GameObject.Find("Canvas");
     }
 
-    public void createUIIcon() {
-        queuedPowerUps = player.GetComponent<PowerUpController>().queuedPowerUps;
+    public void createUIIcon(List<GameObject> queuedPowerUps) {
+        //queuedPowerUps = player.GetComponent<PowerUpController>().queuedPowerUps;
+        //Debug.Log(queuedPowerUps.Count);
         if (queuedPowerUps.Count == 1)
         {
             spawnPoint = new Vector3(scoreIcon.transform.position.x, scoreIcon.transform.position.y - 1.50f);
@@ -58,14 +59,13 @@ public class UIController : MonoBehaviour {
                 GameObject powerUpIconHealth = Instantiate(lifePowerUp, spawnPoint, gameObject.transform.rotation);
                 powerUpIconHealth.transform.SetParent(canvas.transform, true);
                 powerUpIcons.Add(powerUpIconHealth);
-                Debug.Log(powerUpIcons[0]);
                 break;
             case "ForcePush":
                 GameObject powerUpIconForcepush = Instantiate(forcePushPowerUp, spawnPoint, gameObject.transform.rotation);
                 powerUpIconForcepush.transform.SetParent(canvas.transform, true);
                 powerUpIcons.Add(powerUpIconForcepush);
                 break;
-            case "Forcefield":
+            case "Shield":
                 GameObject powerUpIconForcefield = Instantiate(shieldPowerUp, spawnPoint, gameObject.transform.rotation);
                 powerUpIconForcefield.transform.SetParent(canvas.transform, true);
                 powerUpIcons.Add(powerUpIconForcefield);
