@@ -21,15 +21,12 @@ public class UIController : MonoBehaviour {
     private float width;
     private Vector3 spawnPoint;
 
-    private bool position1Free;
-
     void Start () {
         height = Screen.height;
         width = Screen.width;
         player = GameObject.FindGameObjectWithTag("Player");
         scoreIcon = GameObject.Find("New Piskel (9)");
         canvas = GameObject.Find("Canvas");
-        position1Free = true;
     }
 
     public void createUIIcon(GameObject powerUp) {
