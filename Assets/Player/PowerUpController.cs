@@ -19,12 +19,14 @@ public class PowerUpController : MonoBehaviour {
             ShipController shipController = collider.gameObject.GetComponent<ShipController>();
             
             if (shipController.CheckPowerUp()) {
+                UIController.createUIIcon(shipController.GetPowerUp());
                 queuedPowerUps.Add(shipController.GetPowerUp());
+                //UIController.createUIIcon(queuedPowerUps);
                 GameObject collectionAnimation = shipController.getCollectionAnimation();
                 GameObject ActiveCollectionAnimation = Instantiate(collectionAnimation, gameObject.transform.position, collectionAnimation.transform.rotation);
                 ActiveCollectionAnimation.transform.SetParent(gameObject.transform, true);
                 SendPowerUpToPlayer();
-                UIController.createUIIcon(queuedPowerUps);
+                
             }
         }
     }

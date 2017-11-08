@@ -85,39 +85,44 @@ public class PlayerMoveScript : MonoBehaviour {
     public void playerAlwaysRotatesLevel() {
         if (spriteRotation.rotation != gameObject.transform.rotation && canRotateBack)
         {
-            spriteRotation.rotation = Quaternion.RotateTowards(spriteRotation.rotation, gameObject.transform.rotation, 10 * Time.deltaTime);
+            spriteRotation.rotation = Quaternion.RotateTowards(spriteRotation.rotation, gameObject.transform.rotation, 60 * Time.deltaTime);
         }
     }
 
     public void tiltPlayerSprite(String direction){
+        
         if (direction == "left")
-        {
-            canRotateBack = true;
-            if (spriteRotation.rotation.eulerAngles.y < 7 || spriteRotation.rotation.eulerAngles.y > 353)
+        {  
+            if (spriteRotation.rotation.eulerAngles.y < 5 || spriteRotation.rotation.eulerAngles.y > 355)
             {
-                Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y + 500.0f, 0.0f);
-                spriteRotation.Rotate(rotationY * Time.deltaTime);
+                Vector3 rotation = new Vector3(0.0f, 700.0f, 0.0f);
+                spriteRotation.Rotate(rotation);
             }
+            canRotateBack = true;
         }
         else if (direction == "right")
         {
-            canRotateBack = true;
-            if (spriteRotation.rotation.eulerAngles.y > 353 || spriteRotation.rotation.eulerAngles.y < 7)
+            if (spriteRotation.rotation.eulerAngles.y > 355 || spriteRotation.rotation.eulerAngles.y < 5)
             {
-                Vector3 rotationY = new Vector3(0.0f, gameObject.transform.rotation.y - 500.0f, 0.0f);
-                spriteRotation.Rotate(rotationY * Time.deltaTime);
+                Vector3 rotation = new Vector3(0.0f, -700.0f, 0.0f);
+                spriteRotation.Rotate(rotation);
+                
             }
+            canRotateBack = true;
         }
         playerStopsRotating();
+
     }
 
     void playerStopsRotating() {
-        if (spriteRotation.rotation.eulerAngles.y >= 352)
+
+        if (spriteRotation.eulerAngles.y >= 354)
         {
             canRotateBack = false;
         }
-        if (spriteRotation.rotation.eulerAngles.y <= 10)
+        if (spriteRotation.eulerAngles.y <= 6.0)
         {
+            
             canRotateBack = false;
         }
     }
