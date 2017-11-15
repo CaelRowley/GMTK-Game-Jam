@@ -21,6 +21,7 @@ public class ScoreController : MonoBehaviour {
 
 
     public string highScoreGameKey;
+    public string currentScoreGameKey;
     public bool bestScoreHigh;
 
     private Transform firstLifeTransform;
@@ -28,11 +29,9 @@ public class ScoreController : MonoBehaviour {
 
     private int currentScore;
     private float[] bestScores = new float[5];
-    private float bestScore;
     private string highScoreKey;
 
     void Start() {
-        bestScore = 0.0f;
         for(int i = 0; i < bestScores.Length; i++) {
             highScoreKey = highScoreGameKey + (i + 1).ToString();
             bestScores[i] = PlayerPrefs.GetFloat(highScoreKey, 0.0f);
@@ -162,18 +161,19 @@ public class ScoreController : MonoBehaviour {
 
 
     public void SaveScore() {
+        float originalScore = adjustedScore;
+        PlayerPrefs.SetFloat(currentScoreGameKey, adjustedScore);
 
         for(int i = 0; i < bestScores.Length; i++) {
-            //adjustedScore = 9999999999999;
             highScoreKey = highScoreGameKey + (i + 1).ToString();
-            bestScore = PlayerPrefs.GetFloat(highScoreKey, 0);
-
-            if(adjustedScore > bestScore) {
+            if(adjustedScore > bestScores[i]) {
                 PlayerPrefs.SetFloat(highScoreKey, adjustedScore);
-                adjustedScore = bestScore;
+                adjustedScore = bestScores[i];
                 print("Saved score at position: " + i);
             }
         }
+
+        adjustedScore = originalScore;
         PlayerPrefs.Save();
     }
 }

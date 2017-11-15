@@ -5368,7 +5368,8 @@ MonoBehaviour:
   numOfFollowers: 0
   score: 1
   adjustedScore: 0
-  highScoreGameKey: 
+  highScoreGameKey: high_score
+  currentScoreGameKey: current_score
   bestScoreHigh: 0
 --- !u!1 &986586134
 GameObject:
@@ -5680,7 +5681,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4634963211835976, guid: d2e0c221434166245acd5538c81a1435, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.009
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4634963211835976, guid: d2e0c221434166245acd5538c81a1435, type: 2}
       propertyPath: m_LocalPosition.z
