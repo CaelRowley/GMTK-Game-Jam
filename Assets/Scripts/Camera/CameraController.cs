@@ -7,15 +7,16 @@ public class CameraController : MonoBehaviour
 
     public GameObject player;
 
-    private Vector3 offset;
-
-    void Start()
-    {
-        offset = transform.position - player.transform.position;
-    }
+    public float speed = 2.0f;
 
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        float lerpSpeed = speed * Time.deltaTime;
+
+        Vector3 position = this.transform.position;
+        position.y = Mathf.Lerp(this.transform.position.y, player.transform.position.y, lerpSpeed);
+        position.x = Mathf.Lerp(this.transform.position.x, player.transform.position.x, lerpSpeed);
+
+        this.transform.position = position;
     }
 }
