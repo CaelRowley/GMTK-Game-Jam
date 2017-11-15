@@ -23,17 +23,21 @@ public class ScrollController : MonoBehaviour{
 
         if (usedOnce)
         {
-            if (startPosition.y > player.transform.position.y)
+            if (transform.position.y > player.transform.position.y)
             {
-                Instantiate(nextBackground, new Vector3(startPosition.x, startPosition.y - 40.0f, startPosition.z), startRotation);
+                Instantiate(nextBackground, new Vector3(transform.position.x, transform.position.y - 30.0f, transform.position.z), transform.rotation);
                 usedOnce = false;
             }
         }
         else {
-            if (startPosition.y - player.transform.position.y > 100.0f) {
+            if (transform.position.y - player.transform.position.y > 100.0f) {
                 Destroy(gameObject);
             }
+            
         }
-        
+        parallaxScroll();
+    }
+    void parallaxScroll() {
+        gameObject.transform.Translate(Vector3.forward * 0.05f); 
     }
 }
