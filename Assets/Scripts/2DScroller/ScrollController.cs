@@ -35,7 +35,10 @@ public class ScrollController : MonoBehaviour{
             }
             
         }
-        parallaxScroll();
+        if (gameObject.name.Contains("Plane")) {
+            parallaxScroll();
+        }
+        
     }
     void parallaxScroll() {
         gameObject.transform.Translate(Vector3.forward * 0.05f); 
