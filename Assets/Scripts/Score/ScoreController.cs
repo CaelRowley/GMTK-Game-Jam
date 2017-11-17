@@ -46,7 +46,7 @@ public class ScoreController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate() {
+    void Update() {
         int currentHealth = playerStats.health;
         removeLives(currentHealth);
         setMutliplierFromFollowers();
@@ -76,37 +76,37 @@ public class ScoreController : MonoBehaviour {
 
         if (adjustedScore >= 200 && adjustedScore < 500)
         {
-            playerMove.speed = 11.0f;
+            playerMove.speed = 3.5f;
         }
         else if (adjustedScore >= 500 && adjustedScore < 750)
         {
             astroidSpawnerScript.numToSpawnMax = 8;
             powerUpSpawnerScript.numToSpawnMax = 3;
-            playerMove.speed = 11.5f;
+            playerMove.speed = 4.0f;
         }
         else if (adjustedScore >= 750 && adjustedScore < 1000)
         {
             astroidSpawnerScript.numToSpawnMin = 4;
             powerUpSpawnerScript.numToSpawnMin = 2;
-            playerMove.speed = 12.0f;
+            playerMove.speed = 4.2f;
         }
         else if (adjustedScore >= 1000 && adjustedScore < 1500)
         {
             astroidSpawnerScript.numToSpawnMax = 10;
             powerUpSpawnerScript.numToSpawnMax = 5;
-            playerMove.speed = 13.0f;
+            playerMove.speed = 4.6f;
         }
         else if (adjustedScore >= 1500 && adjustedScore < 3000)
         {
             astroidSpawnerScript.numToSpawnMax = 15;
             astroidSpawnerScript.numToSpawnMin = 6;
-            playerMove.speed = 13.5f;
+            playerMove.speed = 5.0f;
         }
         else if (adjustedScore >= 3000)
         {
             astroidSpawnerScript.spawnTimeMin = 10;
             astroidSpawnerScript.spawnTimeMax = 15;
-            playerMove.speed = 15.0f;
+            playerMove.speed = 5.5f;
         }
     }
 

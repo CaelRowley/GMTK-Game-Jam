@@ -25,7 +25,7 @@ public class ScrollController : MonoBehaviour{
         {
             if (transform.position.y > player.transform.position.y)
             {
-                Instantiate(nextBackground, new Vector3(transform.position.x, transform.position.y - 30.0f, transform.position.z), transform.rotation);
+                Instantiate(nextBackground, new Vector3(transform.position.x, transform.position.y - 35.0f, transform.position.z), transform.rotation);
                 usedOnce = false;
             }
         }
