@@ -213,7 +213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40.799988, y: -43.700012}
+  m_AnchoredPosition: {x: 40.80078, y: -43.69922}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!212 &134110515
@@ -267,6 +267,11 @@ CanvasRenderer:
 --- !u!1 &143985944 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1579259789737610, guid: d2e0c221434166245acd5538c81a1435,
+    type: 2}
+  m_PrefabInternal: {fileID: 1209538744}
+--- !u!4 &143985954 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4634963211835976, guid: d2e0c221434166245acd5538c81a1435,
     type: 2}
   m_PrefabInternal: {fileID: 1209538744}
 --- !u!1 &179180025
@@ -602,7 +607,7 @@ Prefab:
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: randomSeed
-      value: -1729352126
+      value: 182840255
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
@@ -670,12 +675,12 @@ Prefab:
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: prewarm
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
@@ -690,7 +695,7 @@ Prefab:
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
@@ -700,6 +705,21 @@ Prefab:
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
+        type: 2}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
+        type: 2}
+      propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1064,7 +1084,7 @@ RectTransform:
   - {fileID: 134110514}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 107.95599, y: -0.000015258789, z: -0.000015258789}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1219,7 +1239,7 @@ Prefab:
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: randomSeed
-      value: -1717180383
+      value: -255403098
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
@@ -1287,12 +1307,12 @@ Prefab:
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: prewarm
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
@@ -1307,7 +1327,7 @@ Prefab:
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 198224631443915136, guid: 959700b81cabf1448a4648410004ab91,
         type: 2}
@@ -1335,6 +1355,7 @@ GameObject:
   - component: {fileID: 624685197}
   - component: {fileID: 624685196}
   - component: {fileID: 624685201}
+  - component: {fileID: 624685202}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1425,6 +1446,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 143985944}
   speed: 3
+--- !u!114 &624685202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624685195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b578a89616dc2545aa174461d013c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 624685199}
+  flipCamera: 0
 --- !u!1 &726454786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 207.8, y: -25}
+  m_AnchoredPosition: {x: 207.80078, y: -25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &858576388
@@ -2071,7 +2105,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 8
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -2120,14 +2154,14 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1760771579
+  randomSeed: -1376324808
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 12
+      scalar: 8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2168,7 +2202,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 12
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5356,7 +5390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.8, y: -25}
+  m_AnchoredPosition: {x: 89.80078, y: -25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &949887467
@@ -5671,6 +5705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120691283}
   - component: {fileID: 1120691284}
+  - component: {fileID: 1120691285}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -5701,12 +5736,24 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1120691282}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e273ed4a8885a4ba23c1f3abbb2726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nextBackground: {fileID: 1120691282}
+--- !u!114 &1120691285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1120691282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3873ce825652f4941a11c9b15b3e7d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 143985954}
 --- !u!1001 &1209538744
 Prefab:
   m_ObjectHideFlags: 0
@@ -6591,7 +6638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 71.600006, y: -22.200012}
+  m_AnchoredPosition: {x: 71.60156, y: -22.199219}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1841341578
@@ -6936,7 +6983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 51.799988, y: -24.200012}
+  m_AnchoredPosition: {x: 51.80078, y: -24.199219}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2022005786
@@ -7068,7 +7115,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 5
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -7117,14 +7164,14 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -954576864
+  randomSeed: 2097173960
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 11
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7165,7 +7212,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
