@@ -37,19 +37,21 @@ public class FollowSlipstream : MonoBehaviour {
     }
 
 
-    protected void FixedUpdate() {
-        if(waypoints.Count > 0) {
+    protected void Update() {
+        if (waypoints.Count > 0)
+        {
             targetHeading = waypoints[targetwaypoint].position - xform.position;
-        } else {
+        }
+        else
+        {
             targetHeading = defaultHeading;
-             speed = slowSpeed;
+            speed = slowSpeed;
         }
         currentHeading = Vector3.Lerp(currentHeading, targetHeading, damping * Time.deltaTime);
-    }
 
 
-    protected void Update() {
-        if(transform.position.z > 0) {
+
+        if (transform.position.z > 0) {
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
         }
         if(useRigidbody)

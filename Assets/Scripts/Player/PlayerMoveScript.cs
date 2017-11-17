@@ -19,7 +19,7 @@ public class PlayerMoveScript : MonoBehaviour {
         spriteRotation = gameObject.transform.GetChild(2);
     }
 
-    void FixedUpdate() {
+    void Update() {
         keepPlayerInBounds();
         playerCanNeverMoveBackwards();
         playerMoveFoward();
@@ -129,7 +129,15 @@ public class PlayerMoveScript : MonoBehaviour {
 
     void playerMoveFoward() {
         float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        //transform.position = Vector3.MoveTowards(transform.position, step);
+
+        //transform.Translate(Vector3.down* step);
+
+        Vector3 position = transform.position;
+        position.y = Mathf.Lerp(transform.position.y, target.position.y , step);
+        position.x = Mathf.Lerp(transform.position.x, target.position.x, step);
+
+        transform.position = position;
     }
 
     void handleTiltInput() {
