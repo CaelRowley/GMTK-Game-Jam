@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1143085027710492}
+  m_IsPrefabParent: 1
+--- !u!1 &1143085027710492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4812994861645436}
+  - component: {fileID: 114125128504869542}
+  m_Layer: 0
+  m_Name: AsteroidSpawner
+  m_TagString: AstroidCreator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4812994861645436
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143085027710492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114125128504869542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143085027710492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13364344520670347a87b0d44f689806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimeMin: 20
+  spawnTimeMax: 45
+  spawnPosXMin: -18
+  spawnPosXMax: 18
+  numToSpawnMin: 3
+  numToSpawnMax: 5
+  obstacles:
+  - {fileID: 1856835554962374, guid: deae2207bdff5f84693d190b9c068810, type: 2}
+  - {fileID: 1978780292967514, guid: cd5c260ff65474342b32c69fd9eb2fc6, type: 2}
+  - {fileID: 1197722969038082, guid: 6bab1222126841d4685037ae086d46ff, type: 2}
+  - {fileID: 1612555231608960, guid: b42c1f5e02c7b2c4bbfc15576ce11349, type: 2}
+  playerObject: {fileID: 0}
+  minScale: 10
+  maxScale: 50
+  useRandomRotation: 1
