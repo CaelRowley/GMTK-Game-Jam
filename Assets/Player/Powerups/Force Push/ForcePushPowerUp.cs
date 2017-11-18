@@ -16,8 +16,8 @@ public class ForcePushPowerUp : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-        float speed = 20.0f;
+	void Update () {
+        float speed = 40.0f;
         float step = speed * Time.deltaTime;
         transform.Translate(Vector3.down * step);
 
