@@ -8,6 +8,9 @@ public class SpawnObstacle : MonoBehaviour {
     public float spawnTimeMax;
     public float spawnPosXMin;
     public float spawnPosXMax;
+
+    public float zPosition = 0;
+
     public int numToSpawnMin;
     public int numToSpawnMax;
     public List<GameObject> obstacles = new List<GameObject>();
@@ -43,7 +46,7 @@ public class SpawnObstacle : MonoBehaviour {
         
         spawnTimer = Random.Range(spawnTimeMin, spawnTimeMax) / 10;
         float yPos = playerObject.transform.position.y - 50 + Random.Range(-25, 25);
-        Vector3 spawnPoint = new Vector3(Random.Range(spawnPosXMin, spawnPosXMax), yPos, 0);
+        Vector3 spawnPoint = new Vector3(Random.Range(spawnPosXMin, spawnPosXMax), yPos, zPosition);
         GameObject newObstacle = null;
 
         int spriteToSpawn = Random.Range(0, obstacles.Count);

@@ -20,14 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4752064461834624}
   - component: {fileID: 212084022154005972}
-  - component: {fileID: 114094004800441452}
-  - component: {fileID: 114801805983432962}
-  - component: {fileID: 114692271639315218}
-  - component: {fileID: 50732067013426258}
-  - component: {fileID: 58121817942707432}
+  - component: {fileID: 114779868461252086}
+  - component: {fileID: 58208511659504750}
   m_Layer: 0
   m_Name: PlanetWithRings
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,27 +42,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!50 &50732067013426258
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978780292967514}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &58121817942707432
+--- !u!58 &58208511659504750
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,8 +56,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.16
---- !u!114 &114094004800441452
+  m_Radius: 0.0001
+--- !u!114 &114779868461252086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -88,38 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1978780292967514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4414130db1c2c334ea7d3dc3587cb906, type: 3}
+  m_Script: {fileID: 11500000, guid: 6afe3932211ad6f448e2798cca32ec85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionDamage: 1
---- !u!114 &114692271639315218
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978780292967514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419ebb70a8b88e5449c9af19d58e5760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &114801805983432962
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978780292967514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4032246b7d9e645830d1046e988ef5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  explosion: {fileID: 1909841699451952, guid: 720e24c47033f8a40bed1fe509fa6cff, type: 2}
-  invincible: 0
-  player: {fileID: 1579259789737610, guid: d2e0c221434166245acd5538c81a1435, type: 2}
-  invincibilityOffset: 0
+  speed: 0.05
 --- !u!212 &212084022154005972
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -153,7 +102,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7f5835334c9615a4c9263f461cc5d078, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.39607844, g: 0.39607844, b: 0.39607844, a: 0.5921569}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
