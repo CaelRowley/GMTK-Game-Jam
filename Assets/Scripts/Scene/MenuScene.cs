@@ -35,10 +35,15 @@ public class MenuScene : MonoBehaviour {
 
     private void Update() {
         if (fadeIn){
-            fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+            //fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
+            fadeGroup.alpha = fadeGroup.alpha - 0.04f;
         }
         else {
-            fadeGroup.alpha = fadeGroup.alpha + 0.02f; 
+            if(showCredits) {
+                if(fadeGroup.alpha < 0.8f)
+                    fadeGroup.alpha = fadeGroup.alpha + 0.02f;
+            } else
+                fadeGroup.alpha = fadeGroup.alpha + 0.02f; 
         }
 
         if(showCredits) {
