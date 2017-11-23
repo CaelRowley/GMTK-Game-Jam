@@ -165,7 +165,7 @@ Prefab:
     - target: {fileID: 114125128504869542, guid: f5fc8edb7192e314eaf36666c53216c3,
         type: 2}
       propertyPath: obstacles.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4812994861645436, guid: f5fc8edb7192e314eaf36666c53216c3, type: 2}
       propertyPath: m_LocalPosition.x
@@ -204,6 +204,12 @@ Prefab:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 143985944}
+    - target: {fileID: 114125128504869542, guid: f5fc8edb7192e314eaf36666c53216c3,
+        type: 2}
+      propertyPath: obstacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 1413416647185350, guid: dc1a18d31fd90de4699024586e7a760d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5fc8edb7192e314eaf36666c53216c3, type: 2}
   m_IsPrefabParent: 0
@@ -729,6 +735,11 @@ Prefab:
         type: 2}
       propertyPath: health
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 61806113165298260, guid: d2e0c221434166245acd5538c81a1435,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2e0c221434166245acd5538c81a1435, type: 2}
