@@ -8,15 +8,26 @@ public class CameraController : MonoBehaviour
     public GameObject player;
 
     public float speed = 2.0f;
+    private bool introActive;
 
-    void LateUpdate()
-    {
-        float lerpSpeed = speed * Time.deltaTime;
+    private void Start() {
+        introActive = true;
+    }
 
-        Vector3 position = this.transform.position;
-        position.y = Mathf.Lerp(this.transform.position.y, player.transform.position.y, lerpSpeed);
-        position.x = Mathf.Lerp(this.transform.position.x, player.transform.position.x, lerpSpeed);
+    void LateUpdate() {
+        if(!introActive) {
+            float lerpSpeed = speed * Time.deltaTime;
 
-        this.transform.position = position;
+            Vector3 position = this.transform.position;
+            position.y = Mathf.Lerp(this.transform.position.y, player.transform.position.y, lerpSpeed);
+            position.x = Mathf.Lerp(this.transform.position.x, player.transform.position.x, lerpSpeed);
+
+            this.transform.position = position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.gameObject.tag.Equals("Player"))
+            introActive = false;
     }
 }
