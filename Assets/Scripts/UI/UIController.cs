@@ -39,11 +39,14 @@ public class UIController : MonoBehaviour {
         //Debug.Log(queuedPowerUps.Count);
 
         if (queuedPowerUps.Count >= 1){
-            powerUpChecker(powerUp, spawnPoint);
+            GameObject icon = powerUpChecker(powerUp, spawnPoint);
+            
         } else {
             GameObject icon = powerUpChecker(powerUp, spawnPoint);
-            Vector3 moveTo = new Vector3(0, -1, 0);
+            Vector3 moveTo = new Vector3(0, -1.30f, 0);
+            icon.transform.localScale += new Vector3(100, 100, 0);
             icon.transform.Translate(moveTo);
+            
         }
     }
 
@@ -52,6 +55,7 @@ public class UIController : MonoBehaviour {
             if (powerUpIcons.Count > 1){
                 Vector3 spawnPoint = new Vector3(0, -1, 0);
                 powerUpIcons[1].transform.Translate(spawnPoint);
+                powerUpIcons[1].transform.localScale += new Vector3(100, 100, 0);
             }
             GameObject usedPowerUp = powerUpIcons[0];
             powerUpIcons.Remove(usedPowerUp);
