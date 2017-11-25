@@ -176,9 +176,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "DEVELOPERS\n--------------------------------\nCael           \n       Patches\n\nARTWORK\n--------------------------------\nSteve
-    \    \n         Cael\nPatches  \n  \nSFX \n--------------------------------\n
-    \    Liam\n\nMusic \n--------------------------------\n FreeSnakes   \n    \nASSETS\n--------------------------------\nExplosionReal
-    Free \nby asdasdasd\nParticlecollection_free \nby dsadsadsa"
+    \    \n         Cael\nPatches  \n     Liam P.\n  \nSFX \n--------------------------------\n
+    \    Liam R.\n\nMusic \n--------------------------------\n FreeSnakes   \n    \nASSETS\n--------------------------------\nExplosive
+    Realistic VFX \nTexture Free\nby Gustav Hagerling\n\nParticle Collection SKJ \n2016_Free
+    samples \nby SKJ"
 --- !u!222 &72288378
 CanvasRenderer:
   m_ObjectHideFlags: 0
