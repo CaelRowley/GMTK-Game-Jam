@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour {
 
     private GameObject scoreIcon;
     private GameObject canvas;
+    private GameObject camera;
 
     private List<GameObject> queuedPowerUps = new List<GameObject>();
     private List<GameObject> powerUpIcons = new List<GameObject>();
@@ -21,12 +22,15 @@ public class UIController : MonoBehaviour {
     private float width;
     private Vector3 spawnPoint;
 
+    //private bool isFlipped;
+
     void Start () {
         height = Screen.height;
         width = Screen.width;
         player = GameObject.FindGameObjectWithTag("Player");
         scoreIcon = GameObject.Find("New Piskel (9)");
         canvas = GameObject.Find("Canvas");
+        //isFlipped = GameObject.Find("Main Camera").GetComponent<FlipCamera>().flipCamera;
     }
 
     public void createUIIcon(GameObject powerUp) {
