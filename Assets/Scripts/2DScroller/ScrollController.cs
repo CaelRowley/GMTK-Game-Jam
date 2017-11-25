@@ -41,6 +41,6 @@ public class ScrollController : MonoBehaviour{
         
     }
     void parallaxScroll() {
-        gameObject.transform.Translate(Vector3.forward * 0.2f); 
+        gameObject.transform.Translate(Vector3.forward * 0.1f); 
     }
 }
