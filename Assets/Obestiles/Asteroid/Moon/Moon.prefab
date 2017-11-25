@@ -20,14 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4194701581907468}
   - component: {fileID: 212982877754699640}
-  - component: {fileID: 114657624754863004}
-  - component: {fileID: 114648818729783214}
-  - component: {fileID: 114983425173688660}
-  - component: {fileID: 50738478621276096}
   - component: {fileID: 58559154299924882}
+  - component: {fileID: 114809141699866482}
   m_Layer: 0
   m_Name: Moon
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,26 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!50 &50738478621276096
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197722969038082}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &58559154299924882
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -79,8 +56,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
---- !u!114 &114648818729783214
+  m_Radius: 0.0001
+--- !u!114 &114809141699866482
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -88,38 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1197722969038082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4032246b7d9e645830d1046e988ef5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6afe3932211ad6f448e2798cca32ec85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  explosion: {fileID: 1909841699451952, guid: 720e24c47033f8a40bed1fe509fa6cff, type: 2}
-  invincible: 0
-  player: {fileID: 1579259789737610, guid: d2e0c221434166245acd5538c81a1435, type: 2}
-  invincibilityOffset: 0
---- !u!114 &114657624754863004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197722969038082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4414130db1c2c334ea7d3dc3587cb906, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionDamage: 1
---- !u!114 &114983425173688660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197722969038082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 419ebb70a8b88e5449c9af19d58e5760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.05
 --- !u!212 &212982877754699640
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -153,7 +102,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6f1165627b9425c47b9ab8a1b5e4f7b1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.77586204, g: 0.77586204, b: 0.77586204, a: 0.5921569}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

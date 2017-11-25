@@ -36,7 +36,7 @@ public class PlayerMoveScript : MonoBehaviour {
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
             //multiplier.GetComponent<Text>().text = touchPosition.ToString("0");
-            if ((touchPosition.y < (Screen.height*.30)) && (touchPosition.x > (Screen.width*.40)) && (touchPosition.x < (Screen.width * .60)))
+            if (touchPosition.x > Screen.width*.40 && touchPosition.x < Screen.width * .60)
             {
                 gameObject.GetComponent<PowerUpController>().ActivatePowerUp();
             }
