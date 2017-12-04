@@ -126,6 +126,7 @@ MonoBehaviour:
   invincible: 0
   player: {fileID: 1579259789737610, guid: d2e0c221434166245acd5538c81a1435, type: 2}
   invincibilityOffset: 0
+  explosionStartSize: 5
 --- !u!114 &114913324338963978
 MonoBehaviour:
   m_ObjectHideFlags: 1

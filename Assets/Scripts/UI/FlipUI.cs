@@ -11,7 +11,7 @@ public class FlipUI : MonoBehaviour {
 
     void flip()
     {
-        if (PlayerPrefs.GetInt("FlipScreen", 0) == 1) {
+        if (PlayerPrefs.GetInt("FlipScreen", 0) == 0) {
             transform.Rotate(new Vector3(0, 180, 180));
             transform.Translate(new Vector3(0, 1, 0));
         }    

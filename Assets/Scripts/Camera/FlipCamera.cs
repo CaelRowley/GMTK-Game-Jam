@@ -9,7 +9,7 @@ public class FlipCamera : MonoBehaviour {
 
 
     void OnPreCull() {
-        if(PlayerPrefs.GetInt("FlipScreen", 0) == 1) {
+        if(PlayerPrefs.GetInt("FlipScreen", 0) == 0) {
             flipCamera = true;
         } else {
             flipCamera = false;

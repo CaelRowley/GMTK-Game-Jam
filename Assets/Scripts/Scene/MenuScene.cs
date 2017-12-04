@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class MenuScene : MonoBehaviour {
 
-    public GameObject highlightButton;
-    public GameObject normalButton;
     public GameObject tiltButton;
     public GameObject flipScreenCheckMark;
     public GameObject tiltButtonCheckMark;

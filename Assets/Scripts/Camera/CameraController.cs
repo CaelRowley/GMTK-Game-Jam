@@ -27,7 +27,11 @@ public class CameraController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        if(collider.gameObject.tag.Equals("Player"))
+        if(collider.gameObject.tag.Equals("Player")) {
             introActive = false;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            PlayerMoveScript playerStats = collider.gameObject.GetComponent<PlayerMoveScript>();
+            playerStats.canMove = true;
+        }
     }
 }
