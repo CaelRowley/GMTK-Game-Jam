@@ -9,6 +9,12 @@ public class FlipCamera : MonoBehaviour {
 
 
     void OnPreCull() {
+        if(PlayerPrefs.GetInt("FlipScreen", 0) == 1) {
+            flipCamera = true;
+        } else {
+            flipCamera = false;
+        }
+
         camera.ResetWorldToCameraMatrix();
         camera.ResetProjectionMatrix();
         int y = flipCamera? -1 : 1;

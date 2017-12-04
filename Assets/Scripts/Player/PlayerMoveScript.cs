@@ -12,11 +12,17 @@ public class PlayerMoveScript : MonoBehaviour {
     Transform spriteRotationOrg;
     bool canRotateBack = true;
 
+    private bool tiltToPlay = false;
     //private GameObject multiplier;
 
     void Start() {
         //multiplier = GameObject.FindGameObjectWithTag("Multiplier");
         spriteRotation = gameObject.transform.GetChild(2);
+        if(PlayerPrefs.GetInt("TiltToPlay", 0) == 1) {
+            tiltToPlay = true;
+        } else {
+            tiltToPlay = false;
+        }
     }
 
     void Update() {
@@ -24,8 +30,10 @@ public class PlayerMoveScript : MonoBehaviour {
         playerCanNeverMoveBackwards();
         playerMoveFoward();
 
-        //handleTiltInput();
-        handleTouchScreen();
+        if(tiltToPlay)
+            handleTiltInput();
+        else
+            handleTouchScreen();
         moveWithKeys();
         usePowerUp();
         playerAlwaysRotatesLevel();
@@ -36,7 +44,7 @@ public class PlayerMoveScript : MonoBehaviour {
         {
             Vector2 touchPosition = Input.GetTouch(0).position;
             //multiplier.GetComponent<Text>().text = touchPosition.ToString("0");
-            if (touchPosition.x > Screen.width*.40 && touchPosition.x < Screen.width * .60)
+            if (touchPosition.x > Screen.width*.30 && touchPosition.x < Screen.width * .70)
             {
                 gameObject.GetComponent<PowerUpController>().ActivatePowerUp();
             }
