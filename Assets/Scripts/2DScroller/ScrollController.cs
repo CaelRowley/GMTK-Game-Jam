@@ -10,6 +10,8 @@ public class ScrollController : MonoBehaviour{
     private Vector3 startPosition;
     private Quaternion startRotation;
 
+    public float speed = 0.1f;
+
     void Start()
     {
         startPosition = transform.position;
@@ -41,6 +43,6 @@ public class ScrollController : MonoBehaviour{
         
     }
     void parallaxScroll() {
-        gameObject.transform.Translate(Vector3.forward * 0.1f); 
+        gameObject.transform.Translate(Vector3.forward * speed); 
     }
 }
