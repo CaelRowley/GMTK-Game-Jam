@@ -112,7 +112,7 @@ public class ScoreController : MonoBehaviour {
 
     void displayScore() {
         adjustedScore = score / 100;
-        //adjustedScore = 1501;
+        //adjustedScore = 3001;
         gameObject.GetComponent<Text>().text = adjustedScore.ToString("0");
     }
 

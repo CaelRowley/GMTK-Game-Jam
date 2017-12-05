@@ -35,7 +35,7 @@ public class UIController : MonoBehaviour {
 
     public void createUIIcon(GameObject powerUp) {
         queuedPowerUps = player.GetComponent<PowerUpController>().queuedPowerUps;
-        spawnPoint = new Vector3(scoreIcon.transform.position.x, scoreIcon.transform.position.y - 1.20f);
+        spawnPoint = new Vector3(scoreIcon.transform.position.x, scoreIcon.transform.position.y - 1.20f, scoreIcon.transform.position.z);
         //Debug.Log(queuedPowerUps.Count);
 
         if (queuedPowerUps.Count >= 1){
@@ -60,13 +60,6 @@ public class UIController : MonoBehaviour {
             GameObject usedPowerUp = powerUpIcons[0];
             powerUpIcons.Remove(usedPowerUp);
             Destroy(usedPowerUp);
-            
-            //Translate icon to use place
-
-            
-            
-
-
         }
     }
 

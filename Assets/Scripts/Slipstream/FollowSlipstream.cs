@@ -38,6 +38,8 @@ public class FollowSlipstream : MonoBehaviour {
 
 
     protected void Update() {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        float playerSpeed = player.GetComponent<PlayerMoveScript>().speed;
         if (waypoints.Count > 0)
         {
             targetHeading = waypoints[targetwaypoint].position - xform.position;
@@ -45,7 +47,7 @@ public class FollowSlipstream : MonoBehaviour {
         else
         {
             targetHeading = defaultHeading;
-            speed = slowSpeed;
+            speed = slowSpeed * (playerSpeed / 2);
         }
         currentHeading = Vector3.Lerp(currentHeading, targetHeading, damping * Time.deltaTime);
 
@@ -54,14 +56,15 @@ public class FollowSlipstream : MonoBehaviour {
         if (transform.position.z > 0) {
             transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
         }
-        if(useRigidbody)
+
+        if (useRigidbody)
             rigidmember.velocity = currentHeading * speed;
         else
             xform.position += currentHeading * Time.deltaTime * speed;
 
         if (inSlip)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            
             xform.rotation = player.transform.rotation;
             transform.Find("SpriteRotation").rotation = player.transform.GetChild(2).rotation;
         }
@@ -94,9 +97,11 @@ public class FollowSlipstream : MonoBehaviour {
 
 
     public void AddWaypoint(Transform newWaypoint) {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        float playerSpeed = player.GetComponent<PlayerMoveScript>().speed;
         waypoints.Add(newWaypoint);
         inSlip = true;
-        speed = fastSpeed;
+        speed = fastSpeed * (playerSpeed / 3f);
     }
 
     public bool CheckIfFinishedWaypoints() {
