@@ -88,6 +88,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c68fbc8c3e2db6d448393583d119e489, type: 3}
   - {fileID: 8300000, guid: c68fbc8c3e2db6d448393583d119e489, type: 3}
   volume: 1
+  tag: SoundFx
 --- !u!114 &114964266403979058
 MonoBehaviour:
   m_ObjectHideFlags: 1
