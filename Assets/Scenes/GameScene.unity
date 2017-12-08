@@ -936,7 +936,7 @@ Prefab:
     - target: {fileID: 114619615511287866, guid: d2e0c221434166245acd5538c81a1435,
         type: 2}
       propertyPath: health
-      value: 25
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 61806113165298260, guid: d2e0c221434166245acd5538c81a1435,
         type: 2}

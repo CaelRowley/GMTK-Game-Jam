@@ -6,9 +6,9 @@ public class ForcePushPowerUp : MonoBehaviour {
     // Use this for initialization
     private GameObject player;
 
-    public float distance = 5.0f;
+    public float distance = 0.5f;
     public GameObject animationEnd;
-    public float radius = 5.0F;
+    public float radius = 50.0F;
     public float power = 50.0F;
 
     void Start () {
@@ -26,11 +26,15 @@ public class ForcePushPowerUp : MonoBehaviour {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPos, radius);
             foreach (Collider2D hit in colliders)
             {
-                Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
-                if (rb != null) {
-                    Vector3 direction = hit.transform.position - transform.position;
-                    direction = direction.normalized;
-                    rb.AddForce((direction * 8.0f), ForceMode2D.Impulse);
+                if (hit.tag != "Follower")
+                {
+                    Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        Vector3 direction = hit.transform.position - transform.position;
+                        direction = direction.normalized;
+                        rb.AddForce((direction * 22.0f), ForceMode2D.Impulse);
+                    }
                 }
             }
             GameObject ActiveAnimation = Instantiate(animationEnd, gameObject.transform.position, animationEnd.transform.rotation);
