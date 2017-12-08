@@ -526,7 +526,7 @@ MonoBehaviour:
   score: {fileID: 0}
   powerUp: {fileID: 1040980452459800, guid: 5c315fa774e1a67469ac0a477aef4624, type: 2}
   HasPowerUp: 1
-  scoreLost: 10000
+  scoreLost: 100
   collectionAnimation: {fileID: 1354322809745808, guid: b614678d7417e454794f971d7b4bb1af,
     type: 2}
   explosionStartSize: 3.5

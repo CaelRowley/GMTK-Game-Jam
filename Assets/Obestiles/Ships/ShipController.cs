@@ -13,7 +13,7 @@ public class ShipController : MonoBehaviour {
     public GameObject score;
     public GameObject powerUp;
     public bool HasPowerUp;
-    public int scoreLost = 10000;
+    public int scoreLost = 100;
     public GameObject collectionAnimation;
     public float explosionStartSize;
 

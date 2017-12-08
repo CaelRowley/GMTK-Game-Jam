@@ -21,11 +21,6 @@ public class SpawnObstacle : MonoBehaviour {
     private float spawnTimer;
 
 
-    void Start() {
-        spawnTimer = Random.Range(spawnTimeMin, spawnTimeMax) / 10;
-    }
-
-
     void Update() {
         spawnTimer -= Time.deltaTime;
         if(spawnTimer <= 0) {
@@ -43,7 +38,7 @@ public class SpawnObstacle : MonoBehaviour {
         } else {
             randomRotation = transform.rotation;
         }
-        
+
         spawnTimer = Random.Range(spawnTimeMin, spawnTimeMax) / 10;
         float yPos = playerObject.transform.position.y - 50 + Random.Range(-25, 25);
         Vector3 spawnPoint = new Vector3(Random.Range(spawnPosXMin, spawnPosXMax), yPos, zPosition);

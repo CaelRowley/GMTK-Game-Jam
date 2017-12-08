@@ -312,7 +312,7 @@ MonoBehaviour:
   score: {fileID: 0}
   powerUp: {fileID: 0}
   HasPowerUp: 0
-  scoreLost: 10000
+  scoreLost: 100
   collectionAnimation: {fileID: 0}
   explosionStartSize: 2
 --- !u!212 &212168944244848620
