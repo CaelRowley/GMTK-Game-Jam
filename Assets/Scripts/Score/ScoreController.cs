@@ -89,8 +89,8 @@ public class ScoreController : MonoBehaviour {
 
             asteroidSpawner.numToSpawnMin = 0;
             asteroidSpawner.numToSpawnMax = 0;
-            asteroidSpawner.spawnTimeMin = 100;
-            asteroidSpawner.spawnTimeMax = 100;
+            asteroidSpawner.spawnTimeMin = 1;
+            asteroidSpawner.spawnTimeMax = 1;
 
             satteliteSpawner.numToSpawnMin = 0;
             satteliteSpawner.numToSpawnMax = 0;
@@ -111,8 +111,8 @@ public class ScoreController : MonoBehaviour {
 
             asteroidSpawner.numToSpawnMin = 4;
             asteroidSpawner.numToSpawnMax = 6;
-            asteroidSpawner.spawnTimeMin = 40;
-            asteroidSpawner.spawnTimeMax = 50;
+            asteroidSpawner.spawnTimeMin = 25;
+            asteroidSpawner.spawnTimeMax = 40;
 
             satteliteSpawner.numToSpawnMin = 1;
             satteliteSpawner.numToSpawnMax = 1;
@@ -120,7 +120,7 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 100;
 
             playerMove.speed = 3.0f;
-        } else if(adjustedScore >= 1000 && adjustedScore < 2000) {
+        } else if(adjustedScore >= 1000 && adjustedScore < 5000) {
             scoreShipSpawner.numToSpawnMin = 1;
             scoreShipSpawner.numToSpawnMax = 2;
             scoreShipSpawner.spawnTimeMin = 25;
@@ -142,7 +142,7 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 100;
 
             playerMove.speed = 3.5f;
-        } else if(adjustedScore >= 2000 && adjustedScore < 4000) {
+        } else if(adjustedScore >= 5000 && adjustedScore < 10000) {
             scoreShipSpawner.numToSpawnMin = 1;
             scoreShipSpawner.numToSpawnMax = 2;
             scoreShipSpawner.spawnTimeMin = 25;
@@ -164,7 +164,7 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 100;
 
             playerMove.speed = 4.0f;
-        } else if(adjustedScore >= 4000 && adjustedScore < 6000) {
+        } else if(adjustedScore >= 10000 && adjustedScore < 15000) {
             scoreShipSpawner.numToSpawnMin = 1;
             scoreShipSpawner.numToSpawnMax = 2;
             scoreShipSpawner.spawnTimeMin = 25;
@@ -177,8 +177,8 @@ public class ScoreController : MonoBehaviour {
 
             asteroidSpawner.numToSpawnMin = 4;
             asteroidSpawner.numToSpawnMax = 8;
-            asteroidSpawner.spawnTimeMin = 16;
-            asteroidSpawner.spawnTimeMax = 28;
+            asteroidSpawner.spawnTimeMin = 20;
+            asteroidSpawner.spawnTimeMax = 30;
 
             satteliteSpawner.numToSpawnMin = 1;
             satteliteSpawner.numToSpawnMax = 1;
@@ -186,7 +186,7 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 100;
 
             playerMove.speed = 4.5f;
-        } else if(adjustedScore >= 6000 && adjustedScore < 8000) {
+        } else if(adjustedScore >= 15000 && adjustedScore < 20000) {
             scoreShipSpawner.numToSpawnMin = 1;
             scoreShipSpawner.numToSpawnMax = 2;
             scoreShipSpawner.spawnTimeMin = 20;
@@ -200,7 +200,7 @@ public class ScoreController : MonoBehaviour {
             asteroidSpawner.numToSpawnMin = 4;
             asteroidSpawner.numToSpawnMax = 8;
             asteroidSpawner.spawnTimeMin = 15;
-            asteroidSpawner.spawnTimeMax = 27;
+            asteroidSpawner.spawnTimeMax = 30;
 
             satteliteSpawner.numToSpawnMin = 1;
             satteliteSpawner.numToSpawnMax = 1;
@@ -208,7 +208,7 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 100;
 
             playerMove.speed = 5.0f;
-        } else if(adjustedScore >= 10000 && adjustedScore < 15000) {
+        } else if(adjustedScore >= 20000 && adjustedScore < 25000) {
             scoreShipSpawner.numToSpawnMin = 1;
             scoreShipSpawner.numToSpawnMax = 2;
             scoreShipSpawner.spawnTimeMin = 20;
@@ -221,8 +221,8 @@ public class ScoreController : MonoBehaviour {
 
             asteroidSpawner.numToSpawnMin = 4;
             asteroidSpawner.numToSpawnMax = 8;
-            asteroidSpawner.spawnTimeMin = 14;
-            asteroidSpawner.spawnTimeMax = 26;
+            asteroidSpawner.spawnTimeMin = 15;
+            asteroidSpawner.spawnTimeMax = 30;
 
             satteliteSpawner.numToSpawnMin = 1;
             satteliteSpawner.numToSpawnMax = 1;
@@ -230,7 +230,7 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 100;
 
             playerMove.speed = 5.5f;
-        } else if(adjustedScore >= 20000 && adjustedScore < 25000) {
+        } else if(adjustedScore >= 25000 && adjustedScore < 30000) {
             scoreShipSpawner.numToSpawnMin = 1;
             scoreShipSpawner.numToSpawnMax = 2;
             scoreShipSpawner.spawnTimeMin = 20;
@@ -242,8 +242,8 @@ public class ScoreController : MonoBehaviour {
             powerUpShipSpawner.spawnTimeMax = 80;
 
             asteroidSpawner.numToSpawnMin = 4;
-            asteroidSpawner.numToSpawnMax = 10;
-            asteroidSpawner.spawnTimeMin = 12;
+            asteroidSpawner.numToSpawnMax = 6;
+            asteroidSpawner.spawnTimeMin = 15;
             asteroidSpawner.spawnTimeMax = 25;
 
             satteliteSpawner.numToSpawnMin = 1;
@@ -252,7 +252,7 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 100;
 
             playerMove.speed = 6.0f;
-        } else if(adjustedScore >= 35000) {
+        } else if(adjustedScore >= 30000 && adjustedScore < 50000) {
             scoreShipSpawner.numToSpawnMin = 1;
             scoreShipSpawner.numToSpawnMax = 3;
             scoreShipSpawner.spawnTimeMin = 20;
@@ -263,8 +263,8 @@ public class ScoreController : MonoBehaviour {
             powerUpShipSpawner.spawnTimeMin = 50;
             powerUpShipSpawner.spawnTimeMax = 60;
 
-            asteroidSpawner.numToSpawnMin = 6;
-            asteroidSpawner.numToSpawnMax = 10;
+            asteroidSpawner.numToSpawnMin = 4;
+            asteroidSpawner.numToSpawnMax = 8;
             asteroidSpawner.spawnTimeMin = 10;
             asteroidSpawner.spawnTimeMax = 15;
 
@@ -274,6 +274,28 @@ public class ScoreController : MonoBehaviour {
             satteliteSpawner.spawnTimeMax = 80;
 
             playerMove.speed = 6.5f;
+        } else if(adjustedScore >= 50000) {
+            scoreShipSpawner.numToSpawnMin = 2;
+            scoreShipSpawner.numToSpawnMax = 3;
+            scoreShipSpawner.spawnTimeMin = 20;
+            scoreShipSpawner.spawnTimeMax = 30;
+
+            powerUpShipSpawner.numToSpawnMin = 1;
+            powerUpShipSpawner.numToSpawnMax = 1;
+            powerUpShipSpawner.spawnTimeMin = 20;
+            powerUpShipSpawner.spawnTimeMax = 30;
+
+            asteroidSpawner.numToSpawnMin = 5;
+            asteroidSpawner.numToSpawnMax = 8;
+            asteroidSpawner.spawnTimeMin = 10;
+            asteroidSpawner.spawnTimeMax = 10;
+
+            satteliteSpawner.numToSpawnMin = 1;
+            satteliteSpawner.numToSpawnMax = 1;
+            satteliteSpawner.spawnTimeMin = 40;
+            satteliteSpawner.spawnTimeMax = 50;
+
+            playerMove.speed = 7.0f;
         }
     }
 
