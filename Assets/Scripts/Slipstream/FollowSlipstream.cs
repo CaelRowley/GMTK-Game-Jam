@@ -101,7 +101,7 @@ public class FollowSlipstream : MonoBehaviour {
         float playerSpeed = player.GetComponent<PlayerMoveScript>().speed;
         waypoints.Add(newWaypoint);
         inSlip = true;
-        speed = fastSpeed * (playerSpeed / 3f);
+        speed = fastSpeed * (playerSpeed / 3.5f);
     }
 
     public bool CheckIfFinishedWaypoints() {
