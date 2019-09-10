@@ -9,6 +9,7 @@ public class MenuScene : MonoBehaviour {
     public GameObject tiltButton;
     public GameObject flipScreenCheckMark;
     public GameObject tiltButtonCheckMark;
+    public GameObject tutorialButtonCheckMark;
 
     public bool showOptions = false;
     public bool showCredits = false;
@@ -33,8 +34,16 @@ public class MenuScene : MonoBehaviour {
 
     private void Start() {
         fadeGroup = FindObjectOfType<CanvasGroup>();
-        loadingScene = SceneManager.LoadSceneAsync("GameScene");
-        loadingScene.allowSceneActivation = false;
+        if (PlayerPrefs.GetInt("Tutorial", 0) == 1)
+        {
+            loadingScene = SceneManager.LoadSceneAsync("TutorialScene");
+            loadingScene.allowSceneActivation = false;
+        }
+        else {
+            loadingScene = SceneManager.LoadSceneAsync("GameScene");
+            loadingScene.allowSceneActivation = false;
+        }
+        
         fadeIn = true;
         fadeGroup.alpha = 1;
 
@@ -53,6 +62,15 @@ public class MenuScene : MonoBehaviour {
         if(PlayerPrefs.GetInt("TiltToPlay", 0) == 1) {
             GameObject button = GameObject.Find("Tilt Button");
             GameObject checkMark = Instantiate(tiltButtonCheckMark, button.transform.position, button.transform.rotation);
+            checkMark.transform.SetParent(button.transform, true);
+            Vector3 moveTo = new Vector3(30.0f, 0, 0);
+            checkMark.transform.Translate(moveTo);
+        }
+
+        if (PlayerPrefs.GetInt("Tutorial", 0) == 1)
+        {
+            GameObject button = GameObject.Find("Tutorial Button");
+            GameObject checkMark = Instantiate(tutorialButtonCheckMark, button.transform.position, button.transform.rotation);
             checkMark.transform.SetParent(button.transform, true);
             Vector3 moveTo = new Vector3(30.0f, 0, 0);
             checkMark.transform.Translate(moveTo);
@@ -142,6 +160,25 @@ public class MenuScene : MonoBehaviour {
             Vector3 moveTo = new Vector3(30.0f, 0, 0);
             checkMark.transform.Translate(moveTo);
             PlayerPrefs.SetInt("TiltToPlay", 1);
+        }
+    }
+
+    public void OnUseTutorialClick()
+    {
+        GameObject button = GameObject.Find("Tutorial Button");
+
+        if (GameObject.Find("TutorialTick(Clone)"))
+        {
+            Destroy(GameObject.Find("TutorialTick(Clone)"));
+            PlayerPrefs.SetInt("Tutorial", 0);
+        }
+        else
+        {
+            GameObject checkMark = Instantiate(tutorialButtonCheckMark, button.transform.position, button.transform.rotation);
+            checkMark.transform.SetParent(button.transform, true);
+            Vector3 moveTo = new Vector3(30.0f, 0, 0);
+            checkMark.transform.Translate(moveTo);
+            PlayerPrefs.SetInt("Tutorial", 1);
         }
     }
 
