@@ -15,7 +15,7 @@ public class PowerUpController : MonoBehaviour {
     }
 
     void OnTriggerStay2D(Collider2D collider) {
-        if (collider.gameObject.tag.Equals("Follower") && queuedPowerUps.Count < 2) {
+        if (collider.gameObject.tag.Equals("Follower") && queuedPowerUps.Count < 1) {
             ShipController shipController = collider.gameObject.GetComponent<ShipController>();
             
             if (shipController.CheckPowerUp()) {

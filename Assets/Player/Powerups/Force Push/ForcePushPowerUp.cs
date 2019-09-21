@@ -6,7 +6,7 @@ public class ForcePushPowerUp : MonoBehaviour {
     // Use this for initialization
     private GameObject player;
 
-    public float distance = 0.5f;
+    public float distance = 10.5f;
     public GameObject animationEnd;
     public float radius = 50.0F;
     public float power = 50.0F;
@@ -17,7 +17,7 @@ public class ForcePushPowerUp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float speed = 40.0f;
+        float speed = 80.0f;
         float step = speed * Time.deltaTime;
         transform.Translate(Vector3.down * step);
 
